@@ -1,11 +1,14 @@
 # Ignore configuration files that may contain sensitive information.
 <<<<<<< HEAD
+<<<<<<< HEAD
 sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
 =======
+=======
+>>>>>>> 269330acf8e435665eecbc5f7223ee10a830bbde
 sites/*/*settings*.php
 
 # Ignore paths that contain generated content.
@@ -41,4 +44,7 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
+<<<<<<< HEAD
 >>>>>>> 80642117553b1de760820792e18e657e38293c7f
+=======
+>>>>>>> 269330acf8e435665eecbc5f7223ee10a830bbde
