@@ -401,10 +401,10 @@ left: 20px;
 background-color: #232323;
 color: #fff;
 font-family: 'Maven Pro', sans-serif;
-height: 79px;
-margin-bottom: 2px;
+height: 89px;
 border: 0;
 padding: 5px;
+margin-bottom: -5px!important;
 }
 
 .cccover {
@@ -412,11 +412,18 @@ padding: 5px;
 }
 
 .cctitle {
-  font-weight: bold;
+  position: relative;
+  left: -3px;
+  top: -4px;
+  color: #337ab7!important;
+  font-size: 15px;
+  font-weight: normal!important;
 }
 
 .cctime {
-  display: none;
+  display: block!important;
+  position: relative;
+  left: -3px;
 }
 
 .ccalbum {
@@ -428,15 +435,15 @@ padding: 5px;
   float: left;
   width: 75px;
   height: 75px;
+  margin-right: 0;
+  border: 1px solid #fff;
 }
 
-.cccover img {
-  border: 0;
-  float: left;
-  width: 75px;
-  height: 75px;
-  margin-right: 5px;
-  border: 2px solid #fff;
+.ccartist {
+  font-size: 14px;
+  position: relative;
+  left: -3px;
+  top: -8px;
 }
 
 .artist img {
@@ -591,7 +598,7 @@ height: 170px;
 .tunebox {
   margin-top: -10px;
   width: 100%;
-  min-height: 95px;
+  height: 91px;
   background-color: #232323;
   margin-bottom: 10px;
 }
@@ -607,25 +614,25 @@ height: 170px;
   margin-right: 10px;
 }
 
+.tuneoptions {
+  margin-top: 0px;
+  position: relative;
+  top: 5px;
+}
+
 .tuneoption {
   float: left;
-  width: 170px;
-  height: 25px;
+  width: 167px;
+  height: 27px;
   background-color: #808080;
   background-repeat: no-repeat;
   background-size: 16px;
   background-position: 5px 5px;
   position: relative;
-  margin-top: 5px;
+  /* margin-top: 5px; */
+  padding: 3px;
 }
 
-.tuneoption p {
-  position: relative;
-  top: -9px;
-  left: 26px;
-  color: #fff;
-  font-size: 13px;
-}
 
 .tuneoption p a {
       color: #fff;

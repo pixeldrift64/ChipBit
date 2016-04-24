@@ -90,10 +90,11 @@
       hide($content['links']);
       #print render($content);
 
-      krumo($node);
+      print render($content['field_file']);
+      #krumo($node);
 
-      $podcastFile = file_create_url($node->field_file['und'][0]['uri']);
-      krumo($podcastFile);
+      #$podcastFile = file_create_url($node->field_file['und'][0]['uri']);
+      #krumo($podcastFile);
 
     ?>
   </div>

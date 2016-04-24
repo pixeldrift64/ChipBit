@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Clean jPlayer skin: Example</title>
+		<link rel="stylesheet" href="css/player.css">
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+		<script type="text/javascript" src="js/jplayer.cleanskin.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('.webPlayer').videoPlayer({
+					name: 'Big Buck Bunny',
+					media: {
+						m4v: 'demo/Big_Buck_Bunny_Trailer.mp4',
+						poster: 'demo/Big_Buck_Bunny_Trailer.jpg'
+					},
+
+					size: {
+						width: '1280px',
+						height: '720px'
+					},
+
+					// These go directly to jPlayer object, allowing you to rewrite any player setting
+					loadstart: function() {
+						alert('Video loading started!');
+					}
+
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id="uniquePlayer-1" class="webPlayer light">
+			<div id="uniqueContainer-1" class="videoPlayer"></div>
+		</div>
+	</body>
+</html>
