@@ -120,7 +120,7 @@
       <a href="http://chipbit.net/cbplayer" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=420,height=500,toolbar=1,resizeable=0'); return false;" >
       <img class="PlayButton" src="http://chipbit.net/Images/play.png">
       <img id="cc_strinfo_trackimageurl_chipbit" class="NowPlayingImg cc_streaminfo" src="http://chipbit.net/Images/squarelogo.png">
-    <p class="NowPlayingText">Now Playing:</br> <p id="cc_strinfo_song_chipbit" class="cc_streaminfo NowPlayingTitle">Loading...</p></p></br>
+      <p class="NowPlayingText">Now Playing:</br> <p id="cc_strinfo_song_chipbit" class="cc_streaminfo NowPlayingTitle">Loading...</p></p></br>
       <p class="NowPlayingShow">Current Show:</bR> <p id="cc_strinfo_playlist_chipbit" class="cc_streaminfo NowPlayingShowName">Loading...</p></p></br>
       <!---<p class="NowPlayingText">Stream Offline</p></br></br>
       <p class="NowPlayingShow">We are currently experiencing technical issues. Please try again later!</p>-->
