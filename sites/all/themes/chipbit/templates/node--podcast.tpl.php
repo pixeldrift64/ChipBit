@@ -88,13 +88,23 @@
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
-      #print render($content);
 
-      print render($content['field_file']);
-      #krumo($node);
+      $show = $node->field_show['und'][0]['node'];
+      $bannerImg = file_create_url($show->field_banner_image['und'][0]['uri']);
+      $downloadUrl = file_create_url($node->field_file['und'][0]['uri']);
 
-      #$podcastFile = file_create_url($node->field_file['und'][0]['uri']);
-      #krumo($podcastFile);
+      print '<img width="100%" src="'.$bannerImg.'">';
+      print '<h1>'.$show->title.'</h1>';
+      print '<h2 class="epInfo">Episode #'.$node->field_episode_number['und'][0]['value'].' - '.$node->title.'</h2>';
+      print '<p>First aired on <b>'.date('l F jS Y',$node->field_air_date['und'][0]['value']).'</b></p></br>';
+
+
+      print '<p>'.$node->body['und'][0]['value'].'</p></br>';
+
+      print '<p>Listen to this episode:</p>';
+      print render($content['field_file']).'</br>';
+
+      print '<a href="'.$downloadUrl.'" download><i class="fa fa-cloud-download"></i> Download this episode</a></br>';
 
     ?>
   </div>
