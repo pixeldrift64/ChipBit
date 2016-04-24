@@ -637,3 +637,68 @@ height: 170px;
 .tuneoption p a {
       color: #fff;
 }
+
+.view-show-pods .views-row {
+  background-color: #232323;
+  padding: 5px;
+    height: 120px;
+}
+
+.view-show-pods .views-field-title {
+  font-family: 'Maven Pro';
+  font-size: 23px;
+  position: relative;
+  top: -5px;
+}
+
+.view-show-pods .views-field-field-logo {
+  float: left;
+  margin-right: 5px;
+}
+
+.view-show-pods .views-field-field-logo img {
+  border: 2px solid #fff;
+  width: 90px;
+}
+
+.view-show-pods .poddesc {
+  color: #fff;
+}
+
+.view-show-pods .views-field-field-episode-number div {
+  position: relative;
+  top: -29px;
+  background-color: Red;
+  display: inline-block;
+  padding: 2px;
+  clear: both;
+  min-width: 30px;
+  text-align: center;
+  font-size: 16px;
+  font-family: Maven Pro;
+  background-color: #232323;
+  opacity: 0.9;
+  color: #fff;
+}
+
+.view-show-pods .views-field-title-1 {
+  position: relative;
+  top: -51px;
+  left: 97px;
+}
+
+.view-show-pods .views-field-field-file {
+  position: relative;
+  top: -71px;
+  left: 154px;
+}
+
+.view-show-pods .views-field-field-file a {
+  color: #F83D3A;
+}
+
+.view-show-pods .views-field-field-file-1 {
+  position: relative;
+  top: -91px;
+  left: 243px;
+}
