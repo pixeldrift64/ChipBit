@@ -1,0 +1,7 @@
+I’ve used the following javascript libs or other files as listed:
+
+    jQuery: http://jquery.com
+    jPlayer: http://jplayer.org/
+    jQuery NOUI slider: http://refreshless.com/nouislider/
+    Tomorrowland: http://tomorrowland.be
+    Big Buck Buny (demo video): http://www.bigbuckbunny.org/

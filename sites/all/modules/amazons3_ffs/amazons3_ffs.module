@@ -1,0 +1,530 @@
+<?php
+
+define('AMAZONS3_FILEFIELD_SOURCE_HINT_TEXT', 's3://files/file.mp4');
+
+/**
+ * @file
+ * Allow file fields to reference files located on an Amazon S3 bucket.
+ */
+
+/**
+ * Implements hook_menu().
+ *
+ * Callback for the Filefield Source integration's autocomplete callback.
+ */
+function amazons3_ffs_menu() {
+  $items = array();
+  $items['file/amazons3/%/%/%'] = array(
+    'page callback' => 'amazons3_ffs_autocomplete',
+    'page arguments' => array(2, 3, 4),
+    'access callback' => '_filefield_sources_field_access',
+    'access arguments' => array(2, 3, 4),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add the "rebuild cache functionality" here since it's not part of AmazonS3 by default.
+ */
+function amazons3_ffs_form_amazons3_admin_alter(&$form, &$form_state, $form_id) {
+  $form['amazons3_clear_cache']['rebuild'] = array(
+    '#type' => 'submit',
+    '#value' => t('Rebuild file metadata cache'),
+    '#submit' => array('amazons3_ffs_batch_rebuild_cache'),
+  );
+}
+
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function amazons3_ffs_form_field_ui_field_edit_form_alter(&$form, $form_state, $form_id) {
+  if(!empty($form['#instance']['widget']['settings'])){
+
+    $form['#instance']['widget']['settings']['filefield_sources']['filefield_sources']['amazons3'] = array(
+      '#title' => t('AmazonS3 reference options'),
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+
+    $form['#instance']['widget']['settings']['filefield_sources']['filefield_sources']['amazons3']['autocomplete'] = array(
+      '#title' => t('Match file name'),
+      '#options' => array(
+        '0' => t('Starts with string'),
+        '1' => t('Contains string'),
+      ),
+      '#type' => 'radios',
+      '#default_value' => isset($form['#instance']['widget']['settings']['filefield_sources']['filefield_sources']['amazons3']['autocomplete']) ? $form['#instance']['widget']['settings']['filefield_sources']['filefield_sources']['amazons3']['autocomplete'] : '0',
+    );
+  }
+}
+
+
+/**
+ * Integration with Filefield Sources.
+ *
+ * Implements hook_filefield_sources_info().
+ */
+function amazons3_ffs_filefield_sources_info() {
+  $source = array();
+  $source['amazons3'] = array(
+    'name' => t('Amazon S3 reference'),
+    'label' => t('Amazon S3 reference'),
+    'description' => t('Attach a file located on an S3 bucket.'),
+    'process' => 'amazons3_ffs_filefield_source_process',
+    'value' => 'amazons3_ffs_filefield_source_value',
+  );
+  return $source;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function amazons3_ffs_theme() {
+  return array(
+    'amazons3_ffs_filefield_source_element' => array(
+      'render element' => 'element',
+    ),
+    'amazons3_ffs_filefield_source_item' => array(
+      'render element' => 'item',
+      'variables' => array('file' => NULL),
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_file_download()
+ *
+ * @param $uri
+ *
+ * In order to allow modules like Commerce File+Filefield Sources to add new files to products,
+ * we must provide headers to file_access hooks across Drupal core's File API.
+ */
+function amazons3_ffs_file_download($uri) {
+  $files = file_load_multiple(array(), array('uri' => $uri));
+  if (count($files)) {
+    foreach ($files as $item) {
+      // Since some database servers sometimes use a case-insensitive comparison
+      // by default, double check that the filename is an exact match.
+      if ($item->uri === $uri) {
+        $file = $item;
+        break;
+      }
+    }
+  }
+  // No file found, or a temporary file found, do nothing.
+  if (!isset($file) || $file->status != FILE_STATUS_PERMANENT) {
+    return;
+  }
+
+  // Get some headers from Amazon.
+  $s3 = new AmazonS3StreamWrapper();
+  $s3->setUri($file->uri);
+  $metadata = $s3->stream_stat();
+  if ($metadata) {
+    $headers = array(
+      'Content-Type' => file_get_mimetype($file->uri),
+      'Content-Disposition' => 'attachment; filename="' . $file->filename . '"',
+      'Content-Length' => $file->filesize,
+      'Content-Transfer-Encoding' => 'binary',
+    );
+    return $headers;
+  }
+}
+
+
+/**
+ * Submit handler to rebuild the cache via the Batch API.
+ */
+function amazons3_ffs_batch_rebuild_cache($options1, $options2) {
+
+  // todo: Do not truncate the table, if we can find a way to get just the newly-added files.
+  db_truncate('amazons3_file')->execute();
+
+  // @todo: Find a way to make this more efficient.
+  // @see: http://docs.aws.amazon.com/AWSSDKforPHP/latest/#m=AmazonS3/list_objects
+
+  $batch = array(
+    'operations' => array(
+      array('amazons3_ffs_rebuild_process', array($options1, $options2)),
+    ),
+    'finished' => 'amazons3_ffs_rebuild_process_finished',
+    'title' => t('Processing Amazon S3 Cache Rebuild'),
+    'init_message' => t('Starting. Connecting to S3 and fetching objects. Please wait...'),
+    'progress_message' => t('Rebuilding the cache... @current of @total'),
+    'error_message' => t('Amazon S3 Cache Rebuild has encountered an error.'),
+  );
+  batch_set($batch);
+}
+
+
+/**
+ * Batch Operation Callback
+ */
+function amazons3_ffs_rebuild_process($options1, $options2, &$context) {
+  $bucket = variable_get('amazons3_bucket', '');
+
+  if(!libraries_load('awssdk')) {
+    drupal_set_message(t('Unable to load the AWS SDK. Please check you have installed the library correctly and configured your S3 credentials.'), 'error');
+  }
+  else if(!class_exists('AmazonS3')) {
+    drupal_set_message(t('Cannot load AmazonS3 class. Please check the awssdk is installed correctly'), 'error');
+  }
+  else {
+    try {
+      $s3 = new AmazonS3();
+
+      // Total number of objects in the bucket.
+      $total = &drupal_static('totals3count', $s3->get_bucket_object_count($bucket));
+      $bucket = variable_get('amazons3_bucket', '');
+
+      $limit = 1000; // @todo: Make this configurable. 1000 is the S3-imposed limit.
+
+      if (!isset($context['sandbox']['last_key'])) {
+        $objects = $s3->list_objects($bucket, array('max-keys' => $limit));
+
+        $files = (array) $objects->body;
+        $contents = (array) $files['Contents'];
+        $last_file = $contents[$limit-1];
+        $last_file = (array) $last_file;
+        $context['sandbox']['last_key'] = (string) $last_file['Key'];
+        $context['sandbox']['progress'] = 0;
+        $context['sandbox']['current_node'] = 0;
+      }
+      else {
+        // If we've already started processing, start from the last URI.
+        $objects = $s3->list_objects($bucket,
+          array('max-keys' => $limit, 'marker' => $context['sandbox']['last_key']));
+
+        $files = (array) $objects->body;
+        $contents = (array) $files['Contents'];
+        $last_file = $contents[$limit-1];
+        $last_file = (array) $last_file;
+        $context['sandbox']['last_key'] = (string) $last_file['Key'];
+      }
+      $contents = (array) $files['Contents'];
+      $context['sandbox']['max'] = $total;
+
+      $wrapper = new AmazonS3StreamWrapper();
+
+      // Grab each individual object's metadata and inset it into the database.
+      foreach($contents as $object) {
+
+        $file = (array) $object;
+
+        // @todo: Accomodate S3 prefixes.
+        $uri = 's3://' . (string) $file['Key'];
+        $wrapper->setUri($uri);
+        $owner = (array) $file['Owner'];
+
+        $insert = new stdClass();
+        $insert->uri = $uri;
+        $insert->timestamp = strtotime($file['LastModified']);
+        $insert->uid = (string) $owner['ID'];
+        $insert->filesize = (int) $file['Size'];
+        $insert->mode = 33279; // @todo: Accommodate any directories
+
+        // Making sure does not exist in amazons3 cache table
+        if(!amazons3_ffs_cachefile_exist($uri)) {
+          // Making sure $uri is not a directory
+          if(substr($uri, -1) != '/' && $insert->filesize != 0) {
+            drupal_write_record('amazons3_file', $insert);
+          }
+        }
+
+        $context['sandbox']['progress']++;
+        $context['results'][] += $uri;
+        $context['sandbox']['current_node'] = $uri;
+
+        // Let the context know which file we last inserted.
+        $context['message'] = t('Now processing %current of %total',
+          array('%current' => $context['sandbox']['progress'], '%total' => $total));
+
+        if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
+          $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+        }
+      }
+    }
+    catch(RequestCore_Exception $e){
+      if(strstr($e->getMessage(), 'SSL certificate problem')) {
+        drupal_set_message('There was a problem with the SSL certificate. Try setting AWS_CERTIFICATE_AUTHORITY to true in "libraries/awssdk/config.inc.php".
+        You may also have a curl library (e.g. the default shipped with MAMP) that does not contain trust certificates for the major authorities.', 'error');
+      }
+      else {
+        drupal_set_message('There was a problem connecting to S3: '.$e, 'error');
+      }
+    }
+    catch(Exception $e) {
+      drupal_set_message('There was a problem using S3: '.$e, 'error');
+    }
+  }
+}
+
+
+/**
+ * Batch 'finished' callback
+ */
+function amazons3_ffs_rebuild_process_finished($success, $results, $operations) {
+  if ($success) {
+    $message = t('Cache successfully rebuilt. !count files were added.', array('!count' => count($results)));
+  }
+  else {
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array('%error_operation' => $error_operation[0], '@arguments' => print_r($error_operation[1], TRUE)));
+  }
+  drupal_set_message($message);
+}
+
+/**
+ * Load existing s3:// Cache from amazons3_file table
+ */
+function amazons3_ffs_cachefile_exist($uri) {
+  $result = db_query('SELECT uri, filesize FROM {amazons3_file} WHERE uri = :uri', array(':uri' => $uri));
+
+  if($result->rowCount() > 0) {
+    return TRUE;
+  } else {
+    return FALSE;
+  }
+}
+
+/**
+ * Process callback for the Amazon S3 autocomplete textfield.
+ */
+function amazons3_ffs_filefield_source_process($element, &$form_state, $form) {
+  $instance = field_widget_instance($element, $form_state);
+  $settings = $instance['widget']['settings']['filefield_sources'];
+
+  $element['amazons3'] = array(
+    '#weight' => 100.5,
+    '#theme' => 'amazons3_ffs_filefield_source_element',
+    '#filefield_source' => TRUE, // Required for proper theming.
+    '#filefield_sources_hint_text' => AMAZONS3_FILEFIELD_SOURCE_HINT_TEXT,
+  );
+  $element['amazons3']['autocomplete'] = array(
+    '#type' => 'textfield',
+    '#autocomplete_path' => 'file/amazons3/' . $element['#entity_type'] . '/' . $element['#bundle'] . '/' . $element['#field_name'],
+    '#description' => t('Choose a file on your S3 bucket.'),
+  );
+
+  $element['amazons3']['select'] = array(
+    '#name' => implode('_', $element['#array_parents']) . '_autocomplete_select',
+    '#type' => 'submit',
+    '#value' => t('Select'),
+    '#validate' => array(),
+    '#submit' => array('filefield_sources_field_submit'),
+    '#limit_validation_errors' => array($element['#parents']),
+    '#ajax' => array(
+      'path' => 'file/ajax/' . implode('/', $element['#array_parents']) . '/' . $form['form_build_id']['#value'],
+      'wrapper' => $element['upload_button']['#ajax']['wrapper'],
+      'effect' => 'fade',
+    ),
+  );
+
+  return $element;
+}
+
+
+/**
+ * A #filefield_value_callback function.
+ *
+ * Does the heavy lifting of handling the submitted file from the autocomplete field, and merging
+ * the file items with the form field values array.
+ *
+ */
+function amazons3_ffs_filefield_source_value($element, &$item) {
+  if (isset($item['amazons3']['autocomplete']) && strlen($item['amazons3']['autocomplete']) > 0 && $item['amazons3']['autocomplete'] != AMAZONS3_FILEFIELD_SOURCE_HINT_TEXT) {
+    $filename = check_plain($item['amazons3']['autocomplete']);
+    // Try to load a file object by the submitted filename, or create a new one if the file exists but
+    // is not yet in Drupal's {file_managed} table.
+    $fid = amazons3_source_create_file_record($filename);
+
+    if (!empty($fid)) {
+
+      // Load the file to be certain.
+      if ($file = file_load($fid)) {
+
+        // Run all the normal validations, minus file size restrictions.
+        if (isset($element['#upload_validators']['file_validate_size'])) {
+          unset($element['#upload_validators']['file_validate_size']);
+
+          // No need to actually upload the file. It's already been uploaded!
+          unset($element['#upload_location']);
+        }
+
+        if (filefield_sources_element_validate($element, (object) $file)) {
+          // Merge the file record into the item to be returned to the field array.
+          $item = array_merge($item, (array) $file);
+        }
+      }
+    }
+    $item['amazons3']['autocomplete'] = '';
+  }
+}
+
+
+/**
+ * Theme the output of the autocomplete field.
+ */
+function theme_amazons3_ffs_filefield_source_element($variables) {
+  $element = $variables['element'];
+  $element['autocomplete']['#field_suffix'] = drupal_render($element['select']);
+  return '<div class="filefield-source filefield-source-amazons3 clear-block">' . drupal_render($element['autocomplete']) . '</div>';
+}
+
+
+/**
+ * Theme the output of a single item in the autocomplete list.
+ */
+function theme_amazons3_ffs_filefield_source_item($variables) {
+  $file = $variables['file'];
+  $output = '';
+  $output .= '<div class="filefield-source-amazons3-item">';
+  $output .= '<span class="filename">' . $file . '</span>';
+  $output .= '</div>';
+  return $output;
+}
+
+
+/**
+ * Menu callback; autocomplete.js callback to return a list of files.
+ */
+function amazons3_ffs_autocomplete($entity_type, $bundle_name, $field_name, $filename) {
+  $field = field_info_instance($entity_type, $field_name, $bundle_name);
+
+  $items = array();
+  if (!empty($field)) {
+    $files = amazons3_ffs_get_files($filename, $field);
+    foreach ($files as $file) {
+      $items[$file] = theme('amazons3_ffs_filefield_source_item', array('file' => $file));
+    }
+  }
+
+  drupal_json_output($items);
+}
+
+
+/**
+ * Get all the files used within a particular field (or all fields).
+ *
+ * @param $file_name
+ *   The partial name of the file to retrieve.
+ * @param $instance
+ *   Optional. A CCK field array for which to filter returned files.
+ */
+function amazons3_ffs_get_files($filename, $instance = NULL) {
+  $settings = $instance['widget']['settings']['filefield_sources'];
+  // Files are stored with the s3:// prefix
+  //$like = empty($settings['amazons3']['autocomplete']) ? ($filename) : ('%' .  $filename);
+
+  $like = urlencode($filename);
+  $s3files = db_select('amazons3_file', 'af')
+    ->fields('af', array('uri'))
+    ->condition('uri', 's3://%' . db_like($like) . '%', 'LIKE')
+    ->execute()
+    ->fetchAllKeyed(0, 0);
+
+  if (!empty($s3files)) {
+    return $s3files;
+  }
+}
+
+
+/**
+ *
+ * The file field requires a file object to inject into the field['items'] array during the Save process.
+ *   This function will either return an existing file record or create a new one if the file is
+ *   not yet managed by Drupal.
+ *
+ * @param $filename
+ *  The filename we're looking up
+ *
+ * @return array
+ *  A file record from {file_managed}/
+ */
+function amazons3_source_create_file_record($filename) {
+
+  // Set the URI and then attempt to retrieve this object's info from S3.
+  $wrapper = new AmazonS3StreamWrapper();
+  $wrapper->setUri($filename);
+  $response = $wrapper->stream_stat();
+
+  $uri = $wrapper->getUri();
+
+  if (is_array($response) && !empty($response)) {
+
+    $result = db_select('file_managed', 'fm')
+      ->fields('fm', array('fid'))
+      ->condition('uri', $uri)
+      ->execute()
+      ->fetchField();
+
+    // Return the file ID since it is already managed by Drupal
+	if ($result){
+      return $result;
+    }
+
+    // Otherwise, create a new file object to be managed.
+    else {
+      global $user;
+      $mimetype = $wrapper->getMimeType($filename);
+
+      // When adding a new file this way, we keep $file->status = 0 so that, if the entity does not get saved,
+      // it will get cleaned up during garbage removal.
+      $file = new stdClass();
+      $file->filename = drupal_basename($filename);
+      $file->filesize = $response["size"];
+      $file->filemime = $mimetype;
+      $file->timestamp = $response["mtime"];
+      $file->uid = $user->uid;
+      $file->uri = $uri;
+
+      $file = file_save($file);
+
+      // Return the new file ID.
+      return $file->fid;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_filefield_sources_settings().
+ * @todo: This doesn't work yet, as filefield_sources seems to use a form_alter() now for settings.
+ */
+function filefield_source_amazons3_settings($op, $instance) {
+  $return = array();
+
+  if ($op == 'form') {
+    $settings = $instance['widget']['settings']['filefield_sources'];
+
+    $return['amazons3'] = array(
+      '#title' => t('AmazonS3 reference options'),
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+
+    // @todo: This does not have an effect.
+    $return['amazons3']['autocomplete'] = array(
+      '#title' => t('Match file name'),
+      '#options' => array(
+        '0' => t('Starts with string'),
+        '1' => t('Contains string'),
+      ),
+      '#type' => 'radios',
+      '#default_value' => isset($settings['amazons3']['autocomplete']) ? $settings['amazons3']['autocomplete'] : '0',
+    );
+  }
+  elseif ($op == 'save') {
+    $return['amazons3']['autocomplete'] = 0;
+  }
+  return $return;
+}

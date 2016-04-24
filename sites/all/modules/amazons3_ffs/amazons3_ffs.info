@@ -1,0 +1,16 @@
+; $Id$
+name = AmazonS3 Filefield Sources
+description = Provides AmazonS3 integration with Filefield Sources
+package = Amazon S3
+core = 7.x
+files[] = amazons3_ffs.module
+dependencies[] = amazons3
+dependencies[] = filefield_sources
+
+
+; Information added by Drupal.org packaging script on 2015-09-09
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "amazons3_ffs"
+datestamp = "1441836540"
+
