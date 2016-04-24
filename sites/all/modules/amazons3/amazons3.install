@@ -1,0 +1,208 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the AmazonS3 module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function amazons3_requirements($phase) {
+  $t = get_t();
+
+  if ($phase != 'runtime') {
+    return array();
+  }
+
+  // Check for allow_url_fopen.
+  $fopen_allowed = ini_get('allow_url_fopen');
+  $requirements['amazons3_allow_url_fopen'] = array(
+    'severity' => $fopen_allowed ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+    'title' => $t('AmazonS3'),
+    'value' => 'allow_url_fopen',
+    'description' => $fopen_allowed ? $t('The PHP allow_url_fopen setting is on.') : $t('Amazon S3 module requires that the allow_url_fopen setting be turned on in php.ini.'),
+  );
+
+  // Check the AWSSDK minimum.
+  $awssdk_minimum = '1.6.2';
+  $awssdk_info = libraries_load('awssdk');
+  $requirements['amazons3_awssdk'] = array(
+    'severity' => REQUIREMENT_ERROR,
+    'title' => $t('AmazonS3'),
+    'value' => t('Unknown version'),
+    'description' => $t('AmazonS3 requires AWSSDK library version ' . $awssdk_minimum . ' or greater.'),
+  );
+  if ($awssdk_info && class_exists('AmazonS3') && !empty($awssdk_info['version'])) {
+    $requirements['amazons3_awssdk']['value'] = $awssdk_info['version'];
+    if (version_compare($awssdk_info['version'], $awssdk_minimum, '>=')) {
+      $requirements['amazons3_awssdk']['severity'] = REQUIREMENT_OK;
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function amazons3_uninstall() {
+  variable_del('amazons3_bucket');
+  variable_del('amazons3_cname');
+  variable_del('amazons3_domain');
+  variable_del('amazons3_cache');
+  variable_del('amazons3_torrents');
+  variable_del('amazons3_presigned_urls');
+  variable_del('amazons3_saveas');
+  variable_del('amazons3_rrs');
+  variable_del('amazons3_https');
+  variable_del('amazons3_hostname');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function amazons3_schema() {
+  $schema['amazons3_file'] = array(
+    'description' => 'Stores information for uploaded Amazon S3 files.',
+    'fields' => array(
+      'uri' => array(
+        'description' => 'The URI to access the file (either local or remote).',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'filesize' => array(
+        'description' => 'The size of the file in bytes.',
+        'type' => 'int',
+        'size' => 'big',
+        'length' => 14,
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'timestamp' => array(
+        'description' => 'UNIX timestamp for when the file was added.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'dir' => array(
+        'description' => 'Boolean indicating whether or not this object is a directory.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'mode' => array(
+        'description' => 'The file mode returned by the stat function.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'uid' => array(
+        'description' => 'The uid of the user who is associated with the file (not Drupal uid).',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'timestamp' => array('timestamp'),
+    ),
+    'primary key' => array('uri'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Install the caching table.
+ */
+function amazons3_update_7100($sandbox) {
+  $schema['amazons3_file'] = array(
+    'description' => 'Stores information for uploaded Amazon S3 files.',
+    'fields' => array(
+      'uri' => array(
+        'description' => 'The URI to access the file (either local or remote).',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'filesize' => array(
+        'description' => 'The size of the file in bytes.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'timestamp' => array(
+        'description' => 'UNIX timestamp for when the file was added.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'dir' => array(
+        'description' => 'Boolean indicating whether or not this object is a directory.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'mode' => array(
+        'description' => 'The file mode returned by the stat function.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'uid' => array(
+        'description' => 'The uid of the user who is associated with the file (not Drupal uid).',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'indexes' => array(
+      'timestamp' => array('timestamp'),
+    ),
+    'primary key' => array('uri'),
+  );
+  db_create_table('amazons3_file', $schema['amazons3_file']);
+}
+
+/**
+ * Change uid to a varchar.
+ */
+function amazons3_update_7101(&$sandbox) {
+  $spec = array(
+    'description' => 'The uid of the user who is associated with the file (not Drupal uid).',
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+  );
+  db_change_field('amazons3_file', 'uid', 'uid', $spec);
+}
+
+
+/**
+ * Update the filesize column to use a bigint, to allow TB filesizes.
+ */
+function amazons3_update_7102(&$sandbox) {
+  $spec = array(
+    'description' => 'The size of the file in bytes.',
+    'type' => 'int',
+    'size' => 'big',
+    'length' => 14,
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+    'default' => 0,
+  );
+  db_change_field('amazons3_file', 'filesize', 'filesize', $spec);
+}
