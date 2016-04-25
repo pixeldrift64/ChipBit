@@ -74,7 +74,6 @@
  */
 ?>
 <script language="javascript" type="text/javascript" src="http://vps1.pixel-8.co:2199/system/streaminfo.js"></script>
-<script language="javascript" type="text/javascript" src="http://stream.pixel-8.co:2199/system/streaminfo.js"></script>
 <script language="javascript" type="text/javascript" src="http://vps1.pixel-8.co:2199/system/recenttracks.js"></script>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
