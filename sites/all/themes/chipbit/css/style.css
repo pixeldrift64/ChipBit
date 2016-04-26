@@ -8,9 +8,11 @@
 
 ::selection {
   background: #2F7AB7; /* WebKit/Blink Browsers */
+  color: #fff;
 }
 ::-moz-selection {
   background: #2F7AB7; /* Gecko Browsers */
+  color: #fff;
 }
 
 #navbar {
@@ -787,4 +789,8 @@ div.jp-audio {
   text-align: center;
   width: 95%;
   bottom: 0px;
+}
+
+#views-exposed-form-artists-page .views-widget-sort-order {
+  display: none;
 }
