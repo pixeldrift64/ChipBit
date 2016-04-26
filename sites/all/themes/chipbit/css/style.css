@@ -7,10 +7,10 @@
 }
 
 ::selection {
-  background: #301451; /* WebKit/Blink Browsers */
+  background: #2F7AB7; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: #301451; /* Gecko Browsers */
+  background: #2F7AB7; /* Gecko Browsers */
 }
 
 #navbar {
@@ -29,8 +29,8 @@
  }
 
  body.admin-menu #nowplaying {
-   margin-top: 78px;
- }
+   margin-top: 49px;
+}
 
  a.logo img {
        height: 34px;
