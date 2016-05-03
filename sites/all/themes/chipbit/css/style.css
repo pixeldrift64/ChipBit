@@ -604,7 +604,6 @@ height: 170px;
 }
 
 .tunebox {
-  margin-top: -10px;
   width: 100%;
   height: 91px;
   background-color: #232323;
@@ -793,4 +792,28 @@ div.jp-audio {
 
 #views-exposed-form-artists-page .views-widget-sort-order {
   display: none;
+}
+
+.view-id-blog img {
+  float: left;
+  width: 140px;
+  margin: 0px 10px 0px 0px;
+}
+
+.view-id-blog .views-field-title {
+  font-family: 'Maven Pro';
+}
+
+.view-id-blog .views-field-created {
+  font-style: italic;
+}
+
+.view-id-blog .views-field-body {
+  margin-top: 5px;
+}
+
+.view-id-blog .views-row {
+  border-bottom: 1px solid #eee;
+  height: 150px;
+  margin-top: -10px;
 }

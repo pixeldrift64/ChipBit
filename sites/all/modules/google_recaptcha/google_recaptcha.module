@@ -1,0 +1,109 @@
+<?php
+/**
+ * @file
+ * Primary file - Drupal hooks here
+ */
+
+/**
+ * @author
+ * Sergey Serov
+ * www.sergey-serov.ru
+ */
+
+require_once (DRUPAL_ROOT . '/' . drupal_get_path('module', 'google_recaptcha') . '/google_recaptcha.under_hood.inc');
+
+/**
+ * Implements hook_menu().
+ */
+function google_recaptcha_menu() {
+  $items = array();
+
+  // admin pages only
+  $items['admin/config/spam_protection'] = array(
+    'title' => 'Spam protection',
+    'position' => 'right',
+    'weight' => 80,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('administer site configuration'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+  $items['admin/config/spam_protection/google_recaptcha'] = array(
+    'title' => 'Google reCAPTCHA',
+    'page callback' => 'g_summary',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'google_recaptcha.admin.inc',
+    'weight' => 10,
+  );
+  $items['admin/config/spam_protection/google_recaptcha/summary'] = array(
+    'title' => 'Summary',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => 10,
+  );
+  $items['admin/config/spam_protection/google_recaptcha/forms'] = array(
+    'title' => 'Forms for protection',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('g_forms'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'google_recaptcha.admin.inc',
+    'weight' => 20,
+  );
+  $items['admin/config/spam_protection/google_recaptcha/keys'] = array(
+    'title' => 'Keys and settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('g_tune'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'google_recaptcha.admin.inc',
+    'weight' => 30,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function google_recaptcha_form_alter(&$form, &$form_state, $form_id) {
+
+  if (user_is_logged_in()) {
+    return;
+  }
+
+  $tune = variable_get('google_recaptcha');
+
+  // For security usability reasons - forms for
+  // user registration, recovery pass and login always protected
+  $always_protected = array(
+    'user_login',
+    'user_register_form',
+    'user_pass',
+    'user_login_block'
+  );
+
+  drupal_alter('google_recaptcha_always_protect', $always_protected);
+
+  if (in_array($form_id, $always_protected)) {
+    g_add_captcha($form, $form_id);
+  }
+
+  foreach ($tune['protected_forms'] as $protected_form_name) {
+    if (strstr($form_id, $protected_form_name)) {
+      g_add_captcha($form, $form_id);
+    }
+  }
+}
+
+/**
+ * Implements hook_html_head_alter().
+ */
+function google_recaptcha_html_head_alter(&$head_elements) {
+  $tune_js = &drupal_static('google_recaptcha_js');
+  $js = 'var google_recaptcha_onload = function() {' . $tune_js . '};';
+  drupal_add_js($js, 'inline');
+}
+
+

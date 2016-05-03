@@ -1,0 +1,10 @@
+7.x-1.1, 2016-03-01
+-------------------
+- Issue #2537832 by nileshlohar: Access Denied for Configuration pages.
+- Issue #2495009 by tikaszvince: Alter list of forms to protect.
+- Issue #2654108: Add a checkbox option to not log every Google Recaptcha submission.
+- Issue #2536340: No reCAPTCHA in User login block.
+- Move warning for site administrator about empty keys from hook_init to hook_requirements. Remove hook_init.
+- New settings for widget - "size", "theme".
+- Refactoring.
+- Different improvements.
