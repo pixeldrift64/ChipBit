@@ -412,7 +412,6 @@ function md_slider_view($machine_name, $type="block") {
 
   $slider = MDSlider::get_by_machine_name($machine_name);
   if ($slider != NULL) {
-
     drupal_add_js($module_path . '/js/jquery.touchwipe.js');
     drupal_add_js($module_path . '/js/modernizr.js');
     if (variable_get("add_migrate", 0))
@@ -447,6 +446,7 @@ function md_slider_view($machine_name, $type="block") {
       drupal_add_css("public://md-slider-{$slider->machine_name}-layers.css");
 
     md_slider_load_css_file($slider->slid);
+
     // Check width device and hide all object
     if (isset($slider->settings['device_enable'])
         && $slider->settings['device_enable'] == 1) {
@@ -501,4 +501,96 @@ function md_slider_get_md_slider_fields() {
   }
 
   return $fields;
+}
+
+/**
+ * implements support for awecontent module
+ * @param $delta
+ *    Delta of block
+ * @return array
+ */
+function md_slider_awecontent_block_support($delta = '') {
+  $output = array();
+
+  if ($delta) {
+    $output = array('js' => array(), 'css' => array());
+    $module_path = drupal_get_path('module', 'md_slider');
+    //drupal_add_js(array('inEffects' => MDCommon::$in_effects, 'outEffects' => MDCommon::$out_effects), 'setting');
+
+    $slider = MDSlider::get_by_machine_name($delta);
+    if ($slider != NULL) {
+      $output['js'][] = file_create_url($module_path . '/js/jquery.touchwipe.js', array('absolute' => TRUE));
+      $output['js'][] = file_create_url($module_path . '/js/modernizr.js', array('absolute' => TRUE));
+      if (variable_get("add_migrate", 0)) {
+        $output['js'][] = file_create_url($module_path . '/js/jquery-migrate-1.2.1.min.js', array('absolute' => TRUE));
+      }
+      $output['js'][] = file_create_url($module_path . '/js/jquery.easing.js', array('absolute' => TRUE));
+      $output['js'][] = file_create_url($module_path . '/js/md-slider.js', array('absolute' => TRUE));
+
+      // Add js control for slider
+      $in_effect = json_encode(MDCommon::$in_effects);
+      $out_effect = json_encode(MDCommon::$out_effects);
+      $js_control = "(function($) {
+      $(document).ready(function() {
+          effectsIn = {$in_effect};
+          effectsOut = {$out_effect};
+          var options_{$slider->slid} = Drupal.settings.md_slider_options_{$slider->slid};";
+
+      if (isset($slider->settings["on_start"]) && !empty($slider->settings["on_start"])) {
+        $js_control .= "options_{$slider->slid}.OnTransitionStart = {$slider->settings["on_start"]}";
+      }
+
+      if (isset($slider->settings["on_end"]) && !empty($slider->settings["on_end"])) {
+        $js_control .= "options_{$slider->slid}.OnTransitionEnd = {$slider->settings["on_end"]}";
+      }
+
+      $js_control .= "$('#md-slider-{$slider->slid}-block').mdSlider(options_{$slider->slid});
+      });
+    })(jQuery);";
+      $output['js'][] = array('data' => $js_control, 'type' => 'inline');
+
+      // Add css files
+      $output['css'][] = file_create_url($module_path . '/css/animate.css', array('absolute' => TRUE));
+      $output['css'][] = file_create_url($module_path . '/css/md-slider.css', array('absolute' => TRUE));
+      if (isset($slider->settings["generate_css_file"]) && !$slider->settings["generate_css_file"]) {
+        $output['css'][] = array(
+          'data' => variable_get("md_slider_{$slider->slid}_css"),
+          'type' => "inline"
+        );
+      }
+      else {
+        $output['css'][] = file_create_url("public://md-slider-{$slider->machine_name}-layers.css", array('absolute' => TRUE));
+      }
+
+      $output['css'][] = file_create_url(md_slider_load_css_file($slider->slid), array('absolute' => TRUE));
+
+      // Check width device and hide all object
+      $css = '';
+      if (isset($slider->settings['device_enable'])
+        && $slider->settings['device_enable'] == 1
+      ) {
+        $css .= '@media (max-width: ' . $slider->settings['device_width'] . 'px) {
+                #md-slider-' . $slider->slid . '-block .md-objects {
+                  display: none;
+                }
+              }';
+      }
+
+      if (isset($slider->settings['device_width'])
+        && $slider->settings['device_width'] != ''
+      ) {
+        $css .= '@media (max-width: ' . $slider->settings['device_width'] . 'px) {
+                .hideonmobile {
+                  display: none !important;
+                }
+              }';
+      }
+
+      if ($css) {
+        $output['css'][] = array('data' => $css, 'type' => "inline");
+      }
+    }
+  }
+
+  return $output;
 }

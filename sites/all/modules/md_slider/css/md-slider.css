@@ -318,3 +318,11 @@
     -ms-transform: translateX(200%) rotate(25deg) scale(2);
     transform: translateX(200%) rotate(25deg) scale(2);
 }
+.md-arrow {
+    opacity :0;
+    visibility: hidden;
+}
+.md-arrow.active {
+    opacity :1;
+    visibility: visible;
+}

@@ -41,6 +41,10 @@
           <input type="hidden" id="slide-background-color" class="mdt-background mdt-input" value="" name="slide-background-color">
           <label style="float: left">Background Color</label>
         </div>
+        <div class="choose-slide-bg-overlay clearfix">
+          <input type="hidden" id="slide-background-overlay" class="mdt-background mdt-input" value="" name="slide-background-overlay">
+          <label style="float: left">Background Overlay</label>
+        </div>
 
         <input type="hidden" id="slide-thumbnail">
       </div><!-- / .slide-setting -->

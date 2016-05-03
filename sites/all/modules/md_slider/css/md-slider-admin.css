@@ -780,3 +780,13 @@ ul.md-tabs-head {
 .form-item-on-start,
 .form-item-on-end,
 .form-item-dmf-google .form-textarea-wrapper {max-width: 800px}
+
+
+/*Add Overlay*/
+.md-slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

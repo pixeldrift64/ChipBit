@@ -194,8 +194,15 @@
     # Generate layer link
     if (isset($layer['link']) && is_array($layer['link'])) {
       $link = $layer['link'];
-      if (strpos($link['value'], 'http') === FALSE && strpos($link["value"], "#") !== 0)
-        $variables["link"] = url($link['value'], array('absolute' => TRUE));
+      if (strpos($link['value'], 'http') === FALSE && strpos($link["value"], "#") !== 0){
+        $url = parse_url($link['value']);
+        $options = array();
+        $options['absolute'] = TRUE;
+        if (isset($url['fragment']))
+          $options['fragment'] = $url['fragment'];
+
+        $variables["link"] = url($url['path'], $options);
+      }
       else
           $variables["link"] = $link['value'];
     }
@@ -231,7 +238,18 @@
     if ($element_full['stopani'] != 'none' && $element_full['stopani'] != '') {
       $output[] = "data-easeout='{$element_full['stopani']}'";
     }
-
+    if (isset($element_full['paddingtop'])) {
+      $output[] = "data-paddingtop='{$element_full['paddingtop']}'";
+    }
+    if (isset($element_full['paddingright'])) {
+      $output[] = "data-paddingright='{$element_full['paddingright']}'";
+    }
+    if (isset($element_full['paddingbottom'])) {
+      $output[] = "data-paddingbottom='{$element_full['paddingbottom']}'";
+    }
+    if (isset($element_full['paddingleft'])) {
+      $output[] = "data-paddingleft='{$element_full['paddingleft']}'";
+    }
     return implode(' ', $output);
   }
 

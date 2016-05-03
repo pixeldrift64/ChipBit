@@ -13,7 +13,8 @@ function get_video_data($type, $fid) {
     switch ($type) {
         case 'youtube':
             $output['type'] = 'youtube';
-            $url = "http://gdata.youtube.com/feeds/api/videos/{$fid}?v=2&alt=jsonc";
+            $output['fid'] = $fid;
+            $url = "http://www.youtube.com/oembed?url=https://youtu.be/{$fid}&format=json";
             $data = drupal_http_request($url);
             if ($data->code == '200') {
                 $output['data'] = json_decode($data->data);
@@ -29,7 +30,7 @@ function get_video_data($type, $fid) {
                 $output['data'] = (object)$info[0];
             }
             break;
-    }
+    };
 
     return $output;
 }
@@ -132,16 +133,16 @@ function process_layer_style($layer) {
 
     // Process for padding settings
     if (isset($layer->paddingtop) && $layer->paddingtop > 0)
-      $output[] = "padding-top: {$layer->paddingtop}px !important;\n";
+      $output[] = "padding-top: {$layer->paddingtop}px;\n";
 
     if (isset($layer->paddingright) && $layer->paddingright > 0)
-      $output[] = "padding-right: {$layer->paddingright}px !important;\n";
+      $output[] = "padding-right: {$layer->paddingright}px;\n";
 
     if (isset($layer->paddingbottom) && $layer->paddingbottom > 0)
-      $output[] = "padding-bottom: {$layer->paddingbottom}px !important;\n";
+      $output[] = "padding-bottom: {$layer->paddingbottom}px;\n";
 
     if (isset($layer->paddingleft) && $layer->paddingleft > 0)
-      $output[] = "padding-left: {$layer->paddingleft}px !important;\n";
+      $output[] = "padding-left: {$layer->paddingleft}px;\n";
 
     # Process styles for text layer
     if ($layer->type == 'text') {
@@ -281,24 +282,3 @@ function _md_slider_recast($className, stdClass &$object) {
     return $new;
 }
 
-/**
- * Callback function to include mediaBrowser.js
- */
-function _md_slider_include_media_browser_js() {
-  static $included;
-  if ($included) {
-    return;
-  }
-  $included = TRUE;
-  module_load_include('inc', 'media', 'includes/media.browser');
-  $javascript = media_browser_js();
-  foreach ($javascript as $key => $definitions) {
-    foreach ($definitions as $definition) {
-      $function = 'drupal_add_' . $key;
-      call_user_func_array($function, $definition);
-    }
-  }
-  // Add wysiwyg-specific settings.
-  $settings = array('wysiwyg_allowed_attributes' => variable_get('media__wysiwyg_allowed_attributes', array('height', 'width', 'hspace', 'vspace', 'border', 'align', 'style', 'class', 'id', 'usemap', 'data-picture-group', 'data-picture-align')));
-  drupal_add_js(array('media' => $settings), 'setting');
-}
