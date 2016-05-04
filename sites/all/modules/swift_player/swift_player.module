@@ -1,0 +1,121 @@
+<?php
+
+
+/**
+ * Implements hook_permission()
+ */
+function swift_player_permission() {
+
+  return array(
+    'administer swift_player settings' => array(
+      'title' => 'Administer Pxl Develop Settings',
+      'description' => 'View and change system settings for the Pxl Develop module'
+    )
+  );
+
+}
+
+/**
+ * Implements hook_menu().
+ */
+function swift_player_menu() {
+
+  $items['admin/config/swift_player'] = array(
+    'title' => 'Swift Player Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('swift_player_settings_form'),
+    'access arguments' => array('administer swift_player settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['player'] = array(
+    'title' => 'Radio Player',
+    'page callback' => 'swift_player_page',
+    'access arguments' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['player/podcast/%'] = array(
+    'title' => 'Radio Player',
+    'page callback' => 'swift_player_podcast',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+
+}
+
+/**
+ * Implements hook_theme().
+ */
+function swift_player_theme() {
+  $themes = array();
+
+  global $theme;
+
+  $themes['swift_player'] = array(
+    'path' => drupal_get_path('module', 'swift_player') .'/templates',
+    'template' => 'swift_player',
+  );
+
+  $themes['swift_player_podcast'] = array(
+    'path' => drupal_get_path('module', 'swift_player') .'/templates',
+    'template' => 'swift_player_podcast',
+    'variables' => array(
+      'podcastEpNo' => null,
+      'podcastTitle' => null,
+      'podcastFile' => null,
+      'podcastDesc' => null,
+      'podcastDate' => null,
+      'showName' => null,
+      'showLogo' => null,
+    ),
+  );
+
+
+  return $themes;
+
+}
+
+/**
+ * Generates page for the changelog
+ */
+function swift_player_page() {
+
+  print theme('swift_player');
+
+}
+
+/**
+ * Generates page for the changelog
+ */
+function swift_player_podcast($nid) {
+
+  $podcastNode = node_load($nid);
+  $podcastEpNo = $podcastNode->field_episode_number['und'][0]['value'];
+  $podcastTitle = $podcastNode->title;
+  $podcastFile = file_create_url($podcastNode->field_file['und'][0]['uri']);
+  $podcastDesc = $podcastNode->body['und'][0]['value'];
+  $podcastDate = date('d/m/Y', $podcastNode->field_air_date['und'][0]['value']);
+
+  $podcastShow = node_load($podcastNode->field_show['und'][0]['nid']);
+  $showName = $podcastShow->title;
+  $showLogo = file_create_url($podcastShow->field_logo['und'][0]['uri']);
+
+
+  print theme('swift_player_podcast', array(
+    'podcastEpNo' => $podcastEpNo,
+    'podcastTitle' => $podcastTitle,
+    'podcastFile' => $podcastFile,
+    'podcastDesc' => $podcastDesc,
+    'podcastDate' => $podcastDate,
+    'showName' => $showName,
+    'showLogo' => $showLogo,
+  ));
+
+}
+
+
+?>

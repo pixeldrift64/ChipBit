@@ -116,7 +116,7 @@
 </header>
 <div id="nowplaying">
     <div class="container NowPlayingCont">
-      <a href="http://chipbit.net/cbplayer" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=420,height=500,toolbar=1,resizeable=0'); return false;" >
+      <a href="/player" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=350,height=600,toolbar=1,resizeable=0'); return false;" >
       <img class="PlayButton" src="http://chipbit.net/Images/play.png">
       <img id="cc_strinfo_trackimageurl_chipbit" class="NowPlayingImg cc_streaminfo" src="http://chipbit.net/Images/squarelogo.png">
       <p class="NowPlayingText">Now Playing:</br> <p id="cc_strinfo_song_chipbit" class="cc_streaminfo NowPlayingTitle">Loading...</p></p></br>

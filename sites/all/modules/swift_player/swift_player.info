@@ -1,0 +1,11 @@
+name = Swift Player
+description = A radio player module built by SwiftPixel
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2014-10-18
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "swift_player"
+datestamp = "1413658731"
+
+; scripts[] = js/pxl_develop.js
