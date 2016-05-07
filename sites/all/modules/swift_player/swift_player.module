@@ -71,6 +71,7 @@ function swift_player_theme() {
       'podcastDate' => null,
       'showName' => null,
       'showLogo' => null,
+      'showItunes' => null,
     ),
   );
 
@@ -98,11 +99,12 @@ function swift_player_podcast($nid) {
   $podcastTitle = $podcastNode->title;
   $podcastFile = file_create_url($podcastNode->field_file['und'][0]['uri']);
   $podcastDesc = $podcastNode->body['und'][0]['value'];
-  $podcastDate = date('d/m/Y', $podcastNode->field_air_date['und'][0]['value']);
+  $podcastDate = date('jS M Y', $podcastNode->field_air_date['und'][0]['value']);
 
   $podcastShow = node_load($podcastNode->field_show['und'][0]['nid']);
   $showName = $podcastShow->title;
   $showLogo = file_create_url($podcastShow->field_logo['und'][0]['uri']);
+  $showItunes = $podcastShow->field_itunes_url['und'][0]['value'];
 
 
   print theme('swift_player_podcast', array(
@@ -113,6 +115,7 @@ function swift_player_podcast($nid) {
     'podcastDate' => $podcastDate,
     'showName' => $showName,
     'showLogo' => $showLogo,
+    'showItunes' => $showItunes,
   ));
 
 }

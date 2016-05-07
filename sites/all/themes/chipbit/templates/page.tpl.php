@@ -80,7 +80,7 @@
     <div class="navbar-header">
       <?php if ($logo): ?>
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        <img src="/sites/all/themes/chipbit/images/logos/logo_png_chipbit_main_light_nosub.png" alt="<?php print t('Home'); ?>" />
       </a>
       <?php endif; ?>
 
@@ -118,7 +118,7 @@
     <div class="container NowPlayingCont">
       <a href="/player" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=350,height=600,toolbar=1,resizeable=0'); return false;" >
       <img class="PlayButton" src="http://chipbit.net/Images/play.png">
-      <img id="cc_strinfo_trackimageurl_chipbit" class="NowPlayingImg cc_streaminfo" src="http://chipbit.net/Images/squarelogo.png">
+      <img id="cc_strinfo_trackimageurl_chipbit" class="NowPlayingImg cc_streaminfo" src="/sites/all/themes/chipbit/images/logos/logo_png_chipbit_fav-silver.png">
       <p class="NowPlayingText">Now Playing:</br> <p id="cc_strinfo_song_chipbit" class="cc_streaminfo NowPlayingTitle">Loading...</p></p></br>
       <p class="NowPlayingShow">Current Show:</bR> <p id="cc_strinfo_playlist_chipbit" class="cc_streaminfo NowPlayingShowName">Loading...</p></p></br>
       <!---<p class="NowPlayingText">Stream Offline</p></br></br>
