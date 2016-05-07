@@ -27,3 +27,6 @@ regions[page_bottom]    = 'Page bottom'
 stylesheets[all][] = css/style.css
 
 stylesheets[all][] = jplayerTheme/css/player.light.css
+
+
+scripts[] = js/custom.js

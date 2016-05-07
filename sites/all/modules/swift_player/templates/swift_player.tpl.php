@@ -34,7 +34,7 @@ $path = drupal_get_path('module', 'swift_player');
   <div id="nowplaying">
     <div class="container NowPlayingCont">
       <p class="NowPlayingText">Now Playing:</p>
-      <img id="cc_strinfo_trackimageurl_chipbit" class="NowPlayingImg cc_streaminfo" src="http://chipbit.net/Images/squarelogo.png">
+      <img id="cc_strinfo_trackimageurl_chipbit" class="NowPlayingImg cc_streaminfo" src="/sites/all/themes/chipbit/images/logos/logo_png_chipbit_fav-silver.png">
       <div class="nowPlayingPlayer"><p id="cc_strinfo_song_chipbit" class="cc_streaminfo NowPlayingTitle">Loading...</p></div>
     </div>
   </div>

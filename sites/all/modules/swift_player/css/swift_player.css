@@ -15,6 +15,10 @@ html, body {
   padding: 0;
 }
 
+p {
+  font-family: 'Maven Pro';
+}
+
 #navbar {
  min-width: 100%;
  border: 0;
@@ -42,8 +46,6 @@ html, body {
    width: 90%;
   margin: 0px 5%;
  }
-
-
 
  .NowPlayingCont p {
      display: block!important;
@@ -88,4 +90,17 @@ html, body {
    left: 5px;
    color: #fff;
    font-family: fipps-regular;
+ }
+
+ .podcastDetails {
+   padding: 10px;
+ }
+
+ .podcastDetails p {
+   margin: 10px 0px;
+ }
+
+ .podcastDetails a {
+   color: #337ab7;
+   text-decoration: none;
  }
