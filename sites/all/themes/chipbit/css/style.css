@@ -823,3 +823,7 @@ div.jp-audio {
   height: 150px;
   margin-top: -10px;
 }
+
+.front .page-header {
+  display: none;
+}
