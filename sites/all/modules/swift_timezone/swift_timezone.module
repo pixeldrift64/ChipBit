@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Format the UTC time to our current timezone.
+ *
+ * @param  string $date
+ *  Format: [Y-m-d H:i:s].
+ * @param  string $timezone
+ *  Defaults to default Durpal timezone.
+ *
+ * @return string $output
+ *  Return the datetime in format [Y-m-d H:i:s].
+ */
+function format_date_timezone($date, $timezone = NULL) {
+  if (isset($date)) {
+    if (!$timezone) {
+      $timezone = date_default_timezone(FALSE);
+    }
+    $timezone_db = 'UTC';
+    $date_converted = strtotime($date . ' ' . $timezone_db);
+    $output = format_date($date_converted, 'custom', 'Y-m-d H:i:s', $timezone);
+
+    return $output;
+  }
+  return FALSE;
+}
+
+function swift_timezone_preprocess_field(&$variables, $hook) {
+
+}
+
+function swift_timezone_preprocess_page(&$vars) {
+
+  if($_COOKIE['timezone']) {
+    $cookieTimezone = $_COOKIE['timezone'];
+  } else {
+    $cookieTimezone = 'Europe/London';
+  }
+
+  variable_set('date_default_timezone', $cookieTimezone);
+
+}
+
+
+?>
