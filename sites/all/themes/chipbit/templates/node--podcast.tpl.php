@@ -91,7 +91,11 @@
 
       $show = $node->field_show['und'][0]['node'];
       $bannerImg = file_create_url($show->field_banner_image['und'][0]['uri']);
-      $downloadUrl = file_create_url($node->field_file['und'][0]['uri']);
+      if(isset($node->field_file['und'][0]['uri'])) {
+        $downloadUrl = file_create_url($node->field_file['und'][0]['uri']);
+      } else {
+        $downloadUrl = '#';
+      }
 
       print '<img width="100%" src="'.$bannerImg.'">';
       print '<h1>'.$show->title.'</h1>';
