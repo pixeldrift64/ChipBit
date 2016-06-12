@@ -6,13 +6,6 @@
  */
 function swift_player_permission() {
 
-  return array(
-    'administer swift_player settings' => array(
-      'title' => 'Administer Pxl Develop Settings',
-      'description' => 'View and change system settings for the Pxl Develop module'
-    )
-  );
-
 }
 
 /**
@@ -31,7 +24,7 @@ function swift_player_menu() {
   $items['player'] = array(
     'title' => 'Radio Player',
     'page callback' => 'swift_player_page',
-    'access arguments' => TRUE,
+    'access callback' => TRUE,
     'type' => MENU_NORMAL_ITEM,
   );
 
