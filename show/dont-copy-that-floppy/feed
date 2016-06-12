@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+		<channel>
+			<title>Don't Copy That Floppy</title>
+			<link>http://chipbit.net/show/dont-copy-that-floppy</link>
+			<description>The highest quality gaming news. Weekly doses. Fridays from 7pm to 8pm.
+Check us out on social media!
+Facebook: https://www.facebook.com/DCTFPodcast
+Youtube:Â https://www.youtube.com/channel/UCubA2z7PQXjjr66ZEjmsczw
+Twitter:Â https://twitter.com/dctfpodcast
+iTunes:Â https://itunes.apple.com/us/podcast/dont-copy-that-floppy/
+Steam:Â http://steamcommunity.com/groups/dctfpodcast</description>
+			<language>en-us</language>
+			<itunes:image href="http://chipbit.net/Images/DCTFLogo.jpg" />
+			<itunes:category text="Video-Games" />
+			<itunes:author>ChipBit</itunes:author>
+			<itunes:owner>ChipBit Radio</itunes:owner><item>
+	<title>#80 - DAN LIKES OVERWATCH!</title>
+	<description>In this weeks news: E3 speculation, China loves the Warcraft movie, Star Wars Galaxy in Turmoil, and Watchdogs 2 announced.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-06-10.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-06-10.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2016 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#79 - Homophobic Caucasus</title>
+	<description>In this weeks news: Overwatch bans, Vivendi takes over Ubisoft, Nintendo VR, No Man's Sky delay hate, and Operation Caucasus.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-06-04.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-06-04.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 6 Jun 2016 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#78 - Trainwreck Extravaganza</title>
+	<description>In this weeks news: Battleborn losing to Overwatch, FFXV disease, VR drama, and Mighty No 9 train wreck.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-05-27.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-05-27.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2016 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#77 - Polygon Got No Game?</title>
+	<description>In this weeks news: Bioware to make new IP, Nintendo to make movies, Team Ninja's upcoming Souls game, and do Polygon reviewers suck at games?</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-05-20.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-05-20.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#76 - Dank Type Pokemon</title>
+	<description>In this weeks news: Pokemon Sun/Moon info, Civ 6 announced, Overwatch breakaway beta, and is Steam's community toxic?</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-05-13.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-05-13.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#75 - VAC Vigilante</title>
+	<description>In this weeks news: Battlefield 1 announced, anti hacking vigilante, Blizzard invites Nostalrius admins to talk, and release dates/delays.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-05-06.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-05-06.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#74 - Darkathion</title>
+	<description>In this weeks news: YouPorn and ESports, Nintendo delays Zelda, Hyper Light Drifter gets co-op, and DOOM gameplay.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-04-29.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-04-29.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 4 Apr 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#73 - Alex St John Sucks</title>
+	<description>In this weeks news: gameplay reveals at PAXEast, Alex St John calls devs lazy, GameStop creates GameTrust, and Playstation Neo specs.Â </description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-04-23.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-04-23.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 4 Apr 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#72 - Duck Mayonnaise</title>
+	<description>In this weeks news: GTA lawsuits, Blizzard shuts down vanilla server, Lizard Squad shuts down Blizzard servers, and who is the handsomest Pokemon?</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-04-15.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-04-15.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 4 Apr 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#71 - All About Roach</title>
+	<description>In this weeks news: Nintendo and #gamergate, David Hayter is salty, FFXV gets a cartoon and movie, plus it's April Fools Day!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-04-01.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-04-01.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 4 Apr 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#70 - Meatlicker</title>
+	<description>In this weeks news: NX controler leak was fake, League of Legends casters demand higher pay, plus eat hot wings and win Dark Souls 3.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-03-25.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-03-25.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 3 Mar 2016 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#69 - More Confusing Than Ever!</title>
+	<description>In this weeks news: Jim Sterling sued by Digital Homicide, confusing paid mods for DOTA 2, and JJ Abrams still making Portal and Half-Life movies.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-03-19.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-03-19.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 3 Mar 2016 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#68 - #themolyneuxcurse</title>
+	<description>In this weeks news: Microsoft closes down Lionhead, The Division has glitches, and Nintendo tries to justify Metroid Federation Force.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-03-11.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-03-11.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 3 Mar 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#67 - 20YRS OF POKEMON!</title>
+	<description>In this weeks news: Pokemon Nintendo Direct, anti-game politician goes to jail, Zynga news, and Powerman 5000 plagerized.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-02-26.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-02-26.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 2 Feb 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#66 - A Computer Made Me Cry</title>
+	<description>In this weeks news: new Strafe trailer, Capcom gives away games, Dragon Age Tactics, and DICE happened.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-02-21.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-02-21.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sun, 2 Feb 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#65 - HideoTube</title>
+	<description>In this weeks news: Titanfall 2 is happening, Gametrailers shutters, and Hideo Kojima starts a youtube channel.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-02-12.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-02-12.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 2 Feb 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#64 - Danny Devito as Det. Pikachu</title>
+	<description>In this weeks news: Feb is a game/news drought, John Smedley can't get project off ground, Danny Devito as detective Pikachu, and Molyneux is back!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-01-29.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-01-29.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 1 Jan 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#63 - New Years Retrospective!</title>
+	<description>This week Lex and Dan go through all most radical stories of 2015! Spoilers: swatting is a big theme.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2016-01-01.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2016-01-01.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 1 Jan 2016 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#62 - Kojima Saga: Over!</title>
+	<description>In this weeks news: invest in Tim Schafers new game, the end of the Kojima/Konami saga, and should a government regular free-to-play games?</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-12-18.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-12-18.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 12 Dec 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#61 - Game Awards 2015!</title>
+	<description>In this weeks news: Geoff Keighley's Game Awards, lots of cool trailers, Shovel Knight amibo details, and an amazing GTA V mod.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-12-04.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-12-04.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 12 Dec 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#60 - Fallout 4 > Porn</title>
+	<description>In this weeks news: rumors abound, Fallout 4 distracts from pornhub, Tomb Raider sales problems, and Battlefront content problems.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-11-20.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-11-20.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 11 Nov 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#59 - The Cookie Crumbles</title>
+	<description>In this weeks news: movie director making a game, the upcoming game awards, big nintendo direct, Fallout 4 came out, and Itagaki gets sued.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-11-13.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-11-13.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 11 Nov 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#58 - Cat Eating Bread</title>
+	<description>In this weeks news: Dragon's Lair kickstarter, FPS fans prefer sony, and devs cheat the steam review system.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-11-06.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-11-06.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 11 Nov 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#57 - Phil Waves The White Flag</title>
+	<description>In this weeks news: many trailers, beta results, game release dates, and Phil Spencer waves the white flag.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-10-16.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-10-16.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 10 Oct 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#56 - Voice Actors Strike</title>
+	<description>In this weeks news: Star Wars Battlefront beta, voice actors on strike, Destiny news, and upcoming holiday games.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-10-09.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-10-09.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 10 Oct 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#55 - Artanis On Roids</title>
+	<description>In this weeks news: Battletech kickstarter, Humble does a lootcrate, no single player for Siege, and Pro Skater 5 is a shitshow.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-10-02.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-10-02.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 10 Oct 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#54 - PewDiePie on Colbert</title>
+	<description>In this weeks news: PewDiePie and No Man's Sky on Late Night with Colbert, and Ron Jeremy doesn't like video games.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-09-25.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-09-25.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 9 Sep 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#53 - Mighty No9 to Release: Never!</title>
+	<description>In this weeks news: Tokyo Game Show news, lots of release dates and delays, and Nintendo solidifies new management.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-09-18.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-09-18.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 9 Sep 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#52 - Oh Slovenia!</title>
+	<description>In this weeks news: games being made for the NES, game tourney goes wrong, new pokemon, pax prime happened, and tokyo game show is coming.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-09-11.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-09-11.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 9 Sep 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#51 - Fassbender as: The Assassin's Creed</title>
+	<description>In this weeks news: Transformers Devastation, steam gamer demographics, video game movies, and how to win an island.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-08-29.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-08-29.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 8 Aug 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#50 - Prison Server: Drunder</title>
+	<description>In this weeks news: Midway doc happening, Everquest imprisons cheaters, Chinese knockoff console, and Duke Nukem rights.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-08-21.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-08-21.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#49 - BIG BUTT MAN IN TIGHTS</title>
+	<description>In this weeks news: game development in the middle east, more Esports drug bans, USA wins DOTA2 tournie, and Fallout footage on a porn site.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-08-14.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-08-14.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#48 - All The Gamescomz</title>
+	<description>In this weeks news: Gamescom reveals and Konami just keeps on sucking.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-08-07.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-08-07.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#47 - Heavy Dramz</title>
+	<description>In this weeks news: Red Ash flubs, Angry Birds 2 makes cash-money, Half-Life 3 and Silent Hills drama.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-08-01.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-08-01.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 8 Aug 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#46 - Smedley Steps Down</title>
+	<description>In this weeks news: Invidia helps out Batman, Smedley steps down, Kotor II patch, and Snoop Dogg!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-07-24.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-07-24.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 7 Jul 2015 06:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#45 - RIP Satoru Iwata</title>
+	<description>In this weeks news: a death in the industry, Motive Studios announced, Konami f's up again, and Randy Pitchford still sucks.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-07-17.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-07-17.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 7 Jul 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#44 - Sega Admits It</title>
+	<description>In this weeks news: Sega admits Sonic isn't good, Minecraft Story Mode trailer, and cool Black Ops 3 DLC.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-07-10.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-07-10.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 7 Jul 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#43 - Bat-Fail</title>
+	<description>In this weeks news, PC Batman sucks, Minecraft top selling PC game ever, and Nintendo defends new Metroid game.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-07-03.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-07-03.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 7 Jul 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#42 - E3 2015: Car in the Ceiling</title>
+	<description>In this weeks news: E3 2015 happened recently and we're talking about the industry ramifications and presentations. Unfortunately the first part of our E3 coverage this year was lost to the ages.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-06-26.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-06-26.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#41 - Leaky Ships</title>
+	<description>In this weeks news: so many game leaks, nintendo E3 predictions, and Oculus commercials.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-06-12.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-06-12.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#40 - MacDaddy Entertainment</title>
+	<description>In this weeks news: Fallout 4, more game announcements, Gamestop buys ThinkGeek, and steam machines.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-06-05.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-06-05.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#39 - Apology Accepted</title>
+	<description>In this weeks news: cheaters get banned, E3 open to the public, Colonial Marines lawsuit changes, and a bunch of other stuff!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-05-29.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-05-29.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#38 - Animals with Instrument Names</title>
+	<description>In this weeks news: Banjo-Kazooki successor, Green Man Games vs CD Projekt Red, and Nintendo makes money!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-05-08.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-05-08.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#37 - F You Colin Cowherd</title>
+	<description>In this weeks news: even more E3 conferences, steam modding fallout, colin cowherd sucks, also find out if FF15's Cindy is TOO sexy.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-05-01.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-05-01.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#33 - Cash Money MOBAs</title>
+	<description>In this weeks news: 90s game revived on kickstarter with Decent, MOBA is growing, and Nintendo beefs it.Â </description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-04-03.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-04-03.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 4 Apr 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#32 - GDC Happened</title>
+	<description>In this weeks news: the Game Developers Conference happened in San Francisco including Oculus, Steam Machines, and the Nvidia Shield.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-03-06.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-03-06.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 3 Mar 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#31 - "Super Show"</title>
+	<description>In this weeks news: Crowfall kickstarter, Toejam &amp; Earl is back, Telltale Games makes a super show, and good news for the internet!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-02-27.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-02-27.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 2 Feb 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#30 - OMG Your Cat</title>
+	<description>In this weeks news: awesome kickstarter news, terrible The Order 1886 news, twitchcon, sony's VR, and gamergate fallout.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-02-20.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-02-20.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 2 Feb 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#29 - Molyneux Goes Silent</title>
+	<description>In this weeks news: Starr Mazer looking up, Value changed Greenlight, Shadow Realms canned, Swatting gets worse, and Molyneux shuts up.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-02-13.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-02-13.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 2 Feb 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#28 - Game of Thrones...For Kids</title>
+	<description>In this weeks news: Nintendo beefs it a few times, descrimination in south asian esports, Persona 5, and Zelda live action.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-02-06.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-02-06.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 2 Feb 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#27 - BONESTORM</title>
+	<description>In this weeks news: Starr Mazer &amp; Strafe, Nintendo &amp; Youtube, PAX South roundup, and Dragons Dogma MMO moves forward.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-01-30.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-01-30.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 1 Jan 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#26 - New 3DS i XL lite...thing</title>
+	<description>In this weeks news: highest funded kickstarter is about to come out, Nintendo direct news, and Microsoft puts Youtubers at ease.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-01-16.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-01-16.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 1 Jan 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#25 - Zombified Computers</title>
+	<description>In this weeks news: esports is coming to more schools, why games are released broken, and Sony can't keep their servers up.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-01-09.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-01-09.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 1 Jan 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#24 - Miyamoto Is A Boss</title>
+	<description>In this weeks news: xbox live founder leaves, hackers leak xbox dev kit, nintendo wins court cases, and kickstarter games.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2015-01-02.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2015-01-02.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 1 Jan 2015 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#23 - Thanks Dorito Pope!</title>
+	<description>In this weeks news: Game Awards rule! Mojang changes, GTAV in Australia, Gamestop does more douchey stuff, and a memorial of the grandfather of video games.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-12-12.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-12-12.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 12 Dec 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#22 - Sucking For Charity</title>
+	<description>In this weeks news: Geoff Keighley is doing an award show, get your blood pumped while playing FPS, use gamecube controlers for more WiiU games. Then Dan reviews Super Smash Bros for Wii U!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-12-05.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-12-05.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 12 Dec 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#21 - Assassin's Glitch</title>
+	<description>In this weeks news: Assassin's Creed has glitches, Net Neutrality, and the horror of Black Friday.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-11-14.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-11-14.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 11 Nov 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#20 - Dinner and Video Games</title>
+	<description>In this weeks news: even more swatting, Destiny again, Mister Chief news, and Bliz-Con happened. Then Dan reviews Banonetta 2!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-11-07.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-11-07.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 11 Nov 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#19 - 50 Facts of Smash</title>
+	<description>In this weeks news: Human Resources fails, MMO news, Hatred, 50 facts of smash, a little #Gamergate, and much more!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-10-24.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-10-24.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 10 Oct 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#18 - Hackers Gonna Hack</title>
+	<description>In this weeks news: Dragon Age fo' free, Assassin's Creed Specs, and more Destiny hacks. Then Lex reviews Heroes of Might and Magic 3.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-10-10.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-10-10.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 10 Oct 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#17 - Lex Predicts The Future</title>
+	<description>In this weeks news: Battlefield Hardline will work, Angry Birds layoffs, and we take a retrospective on video game kickstarters. Then Dan reviews Dark Souls 2: Crown of the Ivory King.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-10-04.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-10-04.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 10 Oct 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#16 - xX_DestinyMLG420_Xx</title>
+	<description>In this weeks news: Microsoft steams at 60fps, Destiny players find loot, and Blizzard cancels Titan.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-09-26.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-09-26.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 9 Sep 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#15 - Dropping the Spaghetti</title>
+	<description>In this weeks news: Tokyo Game Show is happening, EA's CEO has a 3-year plan, and a Super Smash Peach glitch. Then Dan reviews Muramasa: The Demon Blade.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-09-19.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-09-19.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 9 Sep 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#14 - PAX Prime Happened</title>
+	<description>In this weeks news: PAX Prime news, new hearing in Colonial Marines court case, and Dinosaurs disappear from Steam Greenlight.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-09-05.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-09-05.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 9 Sep 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#13 - Lizard Terrorists</title>
+	<description>In this weeks news: PSN hacked again, Amazon buys Twitch, and Feminist Frequency attacked. Then Lex reviews Super Time Force.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-08-29.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-08-29.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#12 - Beware. The Bear.</title>
+	<description>In this weeks news: The Behemoth announces a game, new Pikachu game, and the top 10 most desireable gaming companies to work for.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-08-22.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-08-22.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#11 - Night Trap!</title>
+	<description>In this weeks news: Night Trap returns, GamesCom happened, and Minorama stole 500k. Then we review Night Trap!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-08-16.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-08-16.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Sat, 8 Aug 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#10 - Kickstarter Fail</title>
+	<description>In this weeks news: changes at Bioware, Kickstarter fails, and Duke Nukem in the library of congress. Then Lex reviews Knights of Pen and Paper. Plus Dan reviews Dark Souls 2: Crown of the Sunken King.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-08-08.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-08-08.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#9 - 1080p Pigeons</title>
+	<description>In this weeks news: Gamestop is taking your fingerprints, Playstation Now, and the retro shooter resurgence.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-08-01.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-08-01.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 8 Aug 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#8 - So Much DLC</title>
+	<description>In this weeks news: Cliffy B announces game, Battleborn Info, Gamestop is horrible, plus lots of DLC related news. Then Lex previews Broforce!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-07-11.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-07-11.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 7 Jul 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#7 - Cliffy B is Back</title>
+	<description>In this weeks episode: Cliffy B has a new company, Nintendo shareholder is a doofus, and a new study of violence in gaming. Then Dan reviews Shovel Knight!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-07-07.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-07-07.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Mon, 7 Jul 2014 05:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#6 - Esports Scholarships</title>
+	<description>In this weeks news: Oculus is going to have a sweet controller, Nintendo sued, Capcom drama, and Esports is a big deal! Then Dan reviews Valiant Hearts.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-06-27.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-06-27.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#5 - E3 Part 2: Forced Hype</title>
+	<description>In this weeks news: all our E3 Press conference alaysis, Watchdogs graphics hack, Nintendo's Microsoft killer, and Steam Sales! Then Lex reviews Dungeons &amp; Dragons: Chronicles of Mystara.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-06-20.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-06-20.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#4 - E3 Part 1: So Many Trailers</title>
+	<description>E3 just happened! In this special episode we dispense with the normal format and just talk trailers. What did we love? What did we hate? Listen to find out!</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-06-13.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-06-13.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 6 Jun 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#3 - Nintendo Invades China</title>
+	<description>In this weeks news: Sony CEO takes a hit, Nintendo is going to make lots of money, new CEO of XBox, and how video gamers should be Libertarian.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-05-16.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-05-16.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#2 - Because Kevin Spacey</title>
+	<description>In this weeks news: there's a Call of Duty trailer, Nintendo is in trouble, Oculus Rift lawsuit, and Lionsgate gets into gaming. Then Lex reviews Legend of Grimrock.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-05-09.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-05-09.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 5 May 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item><item>
+	<title>#1 - Flubbing Our Way Through</title>
+	<description>In our first episode we talk about PAX East, the possible sale of xbox by Microsoft, and the console wars. Then Dan reviews Wonderful 101.</description>
+	<guid>http://cbsound.chipbit.net/DCTF-2014-04-25.mp3</guid>
+	<enclosure url="http://cbsound.chipbit.net/DCTF-2014-04-25.mp3" type="audio/mpeg" length="1" />
+	<pubDate>Fri, 4 Apr 2014 00:00:00 GMT</pubDate>
+	<itunes:duration>00:00:00</itunes:duration>
+	</item></channel>
+</rss>
