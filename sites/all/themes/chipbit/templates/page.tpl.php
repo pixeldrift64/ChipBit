@@ -80,7 +80,7 @@
     <div class="navbar-header">
       <?php if ($logo): ?>
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="/sites/all/themes/chipbit/images/logos/logo_png_chipbit_main_light_nosub.png" alt="<?php print t('Home'); ?>" />
+        <img src="/sites/all/themes/chipbit/images/logos/logo_png_chipbit_main_light_nosub_comp.png" alt="<?php print t('Home'); ?>" />
       </a>
       <?php endif; ?>
 

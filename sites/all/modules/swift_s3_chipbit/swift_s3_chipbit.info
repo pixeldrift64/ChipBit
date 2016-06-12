@@ -1,0 +1,9 @@
+name = Swift s3 for ChipBit
+description = Amazon S3 handling for the ChipBit site
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2014-10-18
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "swift_s3_chipbit"
+datestamp = "1413658731"

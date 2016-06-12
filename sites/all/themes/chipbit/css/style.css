@@ -15,6 +15,10 @@
   color: #fff;
 }
 
+.logo img {
+  padding: 5px;
+}
+
 #navbar {
  position: fixed;
  min-width: 100%;
@@ -411,17 +415,18 @@ left: 20px;
 }
 
 .cctrack {
-background-color: #232323;
-color: #fff;
-font-family: 'Maven Pro', sans-serif;
-height: 89px;
-border: 0;
-padding: 5px;
-margin-bottom: -5px!important;
+  background-color: #232323;
+  color: #fff;
+  font-family: 'Maven Pro', sans-serif;
+  height: 89px;
+  border: 0;
+  padding: 5px;
+  margin-bottom: -7px!important;
 }
 
 .cccover {
   border: 0!important;
+  padding: 1px!important;
 }
 
 .cctitle {
@@ -749,8 +754,9 @@ div.jp-audio {
   padding: 5px;
   height: 110px;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
+
 
 .view-upcoming-live-shows .views-row .views-field-field-logo img {
   float: left;

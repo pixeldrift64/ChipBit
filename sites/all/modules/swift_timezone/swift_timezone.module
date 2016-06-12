@@ -5,7 +5,7 @@ function swift_timezone_preprocess_field(&$variables, $hook) {
 
   if($variables['element']['#field_type'] == 'datestamp') {
 
-    if($_COOKIE['timezone']) {
+    if(isset($_COOKIE['timezone'])) {
       $cookieTimezone = $_COOKIE['timezone'];
     } else {
       $cookieTimezone = 'Europe/London';
@@ -24,7 +24,7 @@ function swift_timezone_views_pre_render(&$view) {
 
   if($view->name == 'upcoming_live_shows') {
 
-    if($_COOKIE['timezone']) {
+    if(isset($_COOKIE['timezone'])) {
       $cookieTimezone = $_COOKIE['timezone'];
     } else {
       $cookieTimezone = 'Europe/London';
@@ -67,7 +67,7 @@ function swift_timezone_block_view($delta = '') {
 
 function swift_timezone_swift_timezone_info() {
 
-  if($_COOKIE['timezone']) {
+  if(isset($_COOKIE['timezone'])) {
     $cookieTimezone = $_COOKIE['timezone'];
   } else {
     $cookieTimezone = 'Europe/London';
