@@ -317,7 +317,7 @@ define('MENU_PREFERRED_LINK', '1cf698d64d1aa4b83907cf6ed55db3a7f8e92c91');
  * actually exists. This list of 'masks' is built in menu_rebuild().
  *
  * @param $parts
- *   An array of path parts; for the above example, 
+ *   An array of path parts; for the above example,
  *   array('node', '12345', 'edit').
  *
  * @return
@@ -404,18 +404,22 @@ function menu_get_ancestors($parts) {
  *   The unserialized $data array, with path arguments replaced.
  */
 function menu_unserialize($data, $map) {
-  if ($data = unserialize($data)) {
-    foreach ($data as $k => $v) {
-      if (is_int($v)) {
-        $data[$k] = isset($map[$v]) ? $map[$v] : '';
-      }
-    }
-    return $data;
-  }
-  else {
-    return array();
-  }
+ if ($data = unserialize($data)) {
+    	if ((!is_array($data)) && (!is_object($data))) {
+        return $data;
+        }
+   foreach ($data as $k => $v) {
+     if (is_int($v)) {
+       $data[$k] = isset($map[$v]) ? $map[$v] : '';
+     }
+   }
+   return $data;
+ }
+ else {
+   return array();
+ }
 }
+
 
 
 
