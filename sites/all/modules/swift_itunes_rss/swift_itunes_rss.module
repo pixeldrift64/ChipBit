@@ -44,7 +44,7 @@ function swift_itunes_rss_feed($path) {
     $rec .= $record['entity_id'].',';
   }
 
-  if(!$rec) {
+  if(!isset($rec)) {
     drupal_not_found();
   }
 
