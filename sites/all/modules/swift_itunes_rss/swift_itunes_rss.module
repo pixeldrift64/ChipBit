@@ -28,6 +28,10 @@ function swift_itunes_rss_feed($path) {
   $nid = drupal_lookup_path('source', 'show/'.$path);
   $node = menu_get_object("node", 1, $nid);
 
+  if(!$node) {
+    drupal_not_found();
+  }
+
   $result = db_select('field_data_field_show', 's')
              ->fields('s')
              ->condition('field_show_nid', $node->nid,'=')
@@ -38,6 +42,10 @@ function swift_itunes_rss_feed($path) {
   while($record = $result->fetchAssoc()) {
 
     $rec .= $record['entity_id'].',';
+  }
+
+  if($rec == '') {
+    drupal_not_found();
   }
 
   $rec = substr($rec,'0','-1');
