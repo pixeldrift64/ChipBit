@@ -67,7 +67,7 @@ function swift_itunes_rss_feed($path) {
 
         $output .= '<item>';
           $output .= '<title>#'.$podcast->field_episode_number['und']['0']['value'].' - '.$podcast->title.'</title>';
-          $output .= '<description>'.$podcast->body['und']['0']['safe_value'].'</description>';
+          $output .= '<description>'.strip_tags($podcast->body['und']['0']['safe_value']).'</description>';
           $output .= '<guid>'.$file.'</guid>';
           $output .= '<enclosure url="'.$file.'" type="audio/mpeg" length="1"/>';
           $output .= '<pubDate>'.$date.'</pubDate>';
