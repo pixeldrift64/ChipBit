@@ -71,7 +71,11 @@ function swift_itunes_rss_feed($path) {
 
         $file = file_create_url($podcast->field_file['und']['0']['uri']);
         $date = date('D, j M Y H:i:s T',$podcast->field_air_date['und']['0']['value']);
-        $duration = date('H:i:s', mktime(0,$podcast->field_duration['und']['0']['value']));
+        if($podcast->field_duration['und']['0']['value']) {
+          $duration = date('H:i:s', mktime(0,$podcast->field_duration['und']['0']['value']));
+        } else {
+          $duration = '00:60:00';
+        }
 
         $output .= '<item>';
           $output .= '<title>#'.$podcast->field_episode_number['und']['0']['value'].' - '.$podcast->title.'</title>';
