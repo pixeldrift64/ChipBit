@@ -1,0 +1,9 @@
+name = Swift iTunes RSS
+description = RSS feed handling for ChipBit by Swift Pixel
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2014-10-18
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "swift_itunes_rss"
+datestamp = "1413658731"
