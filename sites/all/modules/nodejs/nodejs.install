@@ -38,6 +38,7 @@ function nodejs_uninstall() {
   variable_del('nodejs_config_publishUrl');
   variable_del('nodejs_config_write_channels');
   variable_del('nodejs_config_write_clients');
+  variable_del('nodejs_service_key');
 }
 
 /**
