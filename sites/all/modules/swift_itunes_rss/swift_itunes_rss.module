@@ -67,6 +67,7 @@ function swift_itunes_rss_feed($path) {
       $output .= '<itunes:owner>ChipBit Radio</itunes:owner>';
 
       //process podcast items
+      $key = 1;
       foreach($podcasts as $podcast) {
 
         if(isset($podcast->field_file['und']['0']['uri'])) {
@@ -79,6 +80,10 @@ function swift_itunes_rss_feed($path) {
           $duration = '01:00:00';
         }
 
+        $episode_number = $podcast->field_episode_number['und']['0']['value'];
+
+        $ep_key = $episode_number - ($episode_number - 1);
+
         $output .= '<item>';
           $output .= '<title>#'.$podcast->field_episode_number['und']['0']['value'].' - '.$podcast->title.'</title>';
           $output .= '<description>'.strip_tags($podcast->body['und']['0']['safe_value']).'</description>';
@@ -86,7 +91,10 @@ function swift_itunes_rss_feed($path) {
           $output .= '<enclosure url="'.$file.'" type="audio/mpeg" length="1"/>';
           $output .= '<pubDate>'.$date.'</pubDate>';
           $output .= '<itunes:duration>'.$duration.'</itunes:duration>';
+          $output .= '<itunes:order>'.$key.'</itunes:order>';
         $output .= '</item>';
+
+        $key++;
       }
 
     $output .= '</channel>';
