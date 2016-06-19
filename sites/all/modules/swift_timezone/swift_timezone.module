@@ -32,9 +32,9 @@ function swift_timezone_views_pre_render(&$view) {
 
     foreach($view->result as $result) {
 
-      if(isset($result->field_field_date_and_time[0])) {
+      if(isset($result->field_field_date_and_time['0']['rendered']['#markup'])) {
 
-      $time_stamp = intval($result->field_field_date_and_time[0]['raw']['value']);
+      $time_stamp = strtotime(strip_tags($result->field_field_date_and_time['0']['rendered']['#markup']));
       $return = format_date($time_stamp, 'medium', 'D F jS Y - g:ia', $cookieTimezone);
 
       $result->field_field_date_and_time[0]['rendered']['#markup'] = $return;
