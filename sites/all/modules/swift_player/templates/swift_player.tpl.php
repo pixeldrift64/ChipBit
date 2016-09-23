@@ -8,8 +8,8 @@ $path = drupal_get_path('module', 'swift_player');
   <title>Radio Player</title>
   <link rel="stylesheet" type="text/css" href="<?=$path?>/css/swift_player.css" />
   <link rel="stylesheet" href="<?=$path?>/jplayer/css/player.css">
-  <script language="javascript" type="text/javascript" src="http://vps1.pixel-8.co:2199/system/streaminfo.js"></script>
-  <script language="javascript" type="text/javascript" src="http://vps1.pixel-8.co:2199/system/recenttracks.js"></script>
+  <script language="javascript" type="text/javascript" src="http://stream.chipbit.net:2199/system/streaminfo.js"></script>
+  <script language="javascript" type="text/javascript" src="http://stream.chipbit.net:2199/system/recenttracks.js"></script>
   <script src="<?=$path?>/jplayer/js/jquery-1.10.1.min.js"></script>
   <script type="text/javascript" src="<?=$path?>/jplayer/js/jquery.jplayer.min.js"></script>
   <script type="text/javascript" src="<?=$path?>/jplayer/js/jplayer.cleanskin.min.js"></script>
