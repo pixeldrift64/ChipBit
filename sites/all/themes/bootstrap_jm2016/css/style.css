@@ -13,12 +13,12 @@
  }
 
  body {
-   background-image: url('/jamesmayell/sites/all/themes/bootstrap_jm2016/bg.png');
+   background-image: url('/sites/all/themes/bootstrap_jm2016/bg.png');
  }
 
  .header.jumbotron {
    background-color: none;
-   background-image: url('/jamesmayell/sites/all/themes/bootstrap_jm2016/header_bg.jpg');
+   background-image: url('/sites/all/themes/bootstrap_jm2016/header_bg.jpg');
    background-size: 100%;
    background-position: 0;
    border-bottom: 1px solid #eee;
