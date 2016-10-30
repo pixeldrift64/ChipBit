@@ -55,6 +55,7 @@ function disqus_uninstall() {
     'disqus_location',
     'disqus_logo',
     'disqus_nodetypes',
+    'disqus_nodetypes_default',
     'disqus_popular_threads_items',
     'disqus_publickey',
     'disqus_recent_comments_avatarsize',
@@ -67,6 +68,7 @@ function disqus_uninstall() {
     'disqus_top_commenters_hide_mods',
     'disqus_top_commenters_items',
     'disqus_top_commenters_showavatars',
+    'disqus_track_newcomment_ga',
     'disqus_use_site_logo',
     'disqus_weight',
   );
@@ -90,7 +92,6 @@ function disqus_update_7001() {
     drupal_install_schema('disqus');
   }
 }
-
 
 /**
  * Remove deprecated variable.

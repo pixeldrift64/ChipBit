@@ -1,5 +1,11 @@
 CHANGELOG for Disqus for Drupal 7
 
+Disqus 7.x-1.x-dev
+=================================
+- #1507380 by hugronaphor: Integration with google analytics or other analytics
+- #2508561 by slashrsm: Default value handling is broken (Impossible to enable commenting)
+- #2521996 by lalit774: Fix Php warning non-object in disqus_sso_disqus_settings() line 966
+
 Disqus 7.x-1.12
 =================================
 - #2508209 by Eric_A: Add Feeds support

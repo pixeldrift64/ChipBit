@@ -25,7 +25,9 @@ http://disqus.com/api/applications/
 BUILT-IN FEATURES
 =============
 This module can automatically update and/or delete your Disqus threads when you
-delete/update your nodes. 
+delete/update your nodes.
+
+Tracking new comments and replies via "Google Analytics" analytic service.
 
 Visit Disqus configuration page after you installed Disqus API to configure it's
 behaviour. 

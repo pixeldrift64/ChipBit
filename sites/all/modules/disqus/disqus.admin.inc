@@ -70,7 +70,7 @@ function disqus_admin_settings() {
     '#type' => 'checkboxes',
     '#title' => t('Node Types'),
     '#description' => t('Select disqus comments by default to only the following node types.'),
-    '#default_value' => variable_get('disqus_nodetypes_default', array_keys($options)),
+    '#default_value' => variable_get('disqus_nodetypes_default', _disqus_node_types_options()),
     '#options' => $options,
   );
   // Behavior settings.
@@ -96,6 +96,12 @@ function disqus_admin_settings() {
     '#title' => t('Testing'),
     '#description' => t('When enabled, uses the <a href="http://docs.disqus.com/help/2/">disqus_developer</a> flag to tell Disqus that you are in a testing environment. Threads will not display on the public community page with this set.'),
     '#default_value' => variable_get('disqus_developer', FALSE),
+  );
+  $form['behavior']['disqus_track_newcomment_ga'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Track new comments in Google Analytics'),
+    '#description' => t('When enabled, sends tracking information to Google Analytics. This will work only if you have installed the <a href="https://www.drupal.org/project/google_analytics">google_analytics</a> module.'),
+    '#default_value' => variable_get('disqus_track_newcomment_ga', FALSE),
   );
   // Advanced settings.
   $form['advanced'] = array(
