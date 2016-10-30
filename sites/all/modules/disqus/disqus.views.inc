@@ -65,7 +65,7 @@ class views_handler_field_node_disqus_comment_count extends views_handler_field 
        */
       $content['#attached'] = array(
         'js' => array(
-          array('data' => drupal_get_path('module', 'disqus') . '/disqus.js'),
+          array('data' => drupal_get_path('module', 'disqus') . '/js/disqus.js'),
           array(
             'data' => array('disqusComments' => $disqus['domain']),
             'type' => 'setting',

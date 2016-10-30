@@ -43,7 +43,7 @@ function _disqus_ds_comment(array &$field) {
       '#access' => user_access('view disqus comments'),
       '#attached' => array(
         'js' => array(
-          array('data' => drupal_get_path('module', 'disqus') . '/disqus.js', 'type' => 'file'),
+          array('data' => drupal_get_path('module', 'disqus') . '/js/disqus.js', 'type' => 'file'),
           array('data' => $settings, 'type' => 'setting'),
         ),
       ),
@@ -77,7 +77,7 @@ function _disqus_ds_comment_count(array &$field) {
       ),
       '#attached' => array(
         'js' => array(
-          array('data' => drupal_get_path('module', 'disqus') . '/disqus.js', 'type' => 'file'),
+          array('data' => drupal_get_path('module', 'disqus') . '/js/disqus.js', 'type' => 'file'),
           array('data' => $settings, 'type' => 'setting'),
         ),
       ),
