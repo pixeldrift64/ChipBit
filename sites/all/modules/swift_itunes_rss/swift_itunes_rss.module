@@ -109,6 +109,9 @@ function swift_itunes_rss_feed($path) {
     $output .= '</channel>';
   $output .= '</rss>';
 
+  //Sanitize the output to remove ampersands
+  $output = preg_replace('/&(?!#?[a-z0-9]+;)/', '&amp;', $output);
+
   header('Content-Type: text/xml');
   print $output;
 }
