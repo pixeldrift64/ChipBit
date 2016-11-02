@@ -62,8 +62,11 @@ function swift_itunes_rss_feed($path) {
       $output .= '<description>'.strip_tags($node->body['und']['0']['safe_value']).'</description>';
       $output .= '<language>en-us</language>';
       $output .= '<itunes:image href="'.file_create_url($node->field_logo['und']['0']['uri']).'" />';
+      $output .= '<itunes:category text="Games & Hobbies" >';
       $output .= '<itunes:category text="Video Games" />';
+      $output .= '</itunes:category>';
       $output .= '<itunes:author>'.$node->title.'</itunes:author>';
+      $output .= '<itunes:explicit>no</itunes:explicit>';
       $output .= '<itunes:owner>ChipBit Radio</itunes:owner>';
 
       //process podcast items
