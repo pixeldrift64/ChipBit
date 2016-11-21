@@ -1,0 +1,179 @@
+
+
+@media screen and (max-width: 1198px) {
+
+
+.tuneoption {
+  width: 117px;
+}
+
+.cctime {
+  display: none;
+}
+
+.cctrack {
+  word-break: break-all;
+}
+
+.featboxpod p{
+  width: 230px;
+}
+
+.view-upcoming-live-shows .views-field-body {
+  line-height: 17px;
+}
+
+
+}
+
+@media screen and (max-width: 990px) {
+
+.view-artists .views-row {
+  width: 167px;
+  height: 186px;
+}
+
+.tuneoptions {
+  display: none;
+}
+
+.cctime {
+  clear: both;
+}
+
+.cctrack .ccdetails_withcover {
+    margin-left: 2px!important;
+}
+
+.cctrack .cccover {
+  background-color: #232323!important;
+  float: initial!important;
+  margin-right: 0!important;
+}
+
+.cccover img {
+    border: 0;
+    float: initial!important;
+    width: 75px;
+    height: 75px;
+    margin-right: 0!important;
+    border: 1px solid #fff;
+}
+
+.cctrack {
+  min-height: 140px;
+  text-align: center;
+  height: auto;
+}
+
+.tunebox {
+  text-align: center;
+}
+
+.featimagetune {
+  float: initial;
+
+}
+
+.view-upcoming-live-shows .views-field-body {
+    line-height: 13px;
+    font-size: 12px;
+}
+
+.view-latest-podcasts .views-field-title,
+.view-latest-podcasts .views-field-body,
+#block-views-latest-podcasts-block,
+#block-block-1 {
+  display: none;
+}
+
+}
+
+@media screen and (max-width: 767px) {
+
+.NowPlayingShow,
+.NowPlayingShowName,
+.NowPlayingText,
+.NowPlayingTitle {
+  display: none!important;
+}
+
+.NowPlayingImg {
+  float: initial!important;
+}
+
+.NowPlayingCont {
+  text-align: center;
+}
+
+.PlayButton {
+    position: absolute;
+    width: 50px;
+    margin-top: 57px;
+    margin-left: 60px;
+}
+
+.navbar-nav li {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+.navbar-nav li a {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+.poddesc p {
+    line-height: 14px;
+}
+
+.block-md-slider {
+  display: none;
+}
+
+}
+
+@media screen and (max-width: 500px) {
+
+body {
+  word-break: break-word;
+}
+
+.poddesc p {
+  display: none;
+}
+
+.podButtons {
+    position: relative;
+    top: -99px;
+    left: 97px;
+    width: auto;
+    overflow: hidden;
+    width: 134px;
+    height: 68px;
+}
+
+.view-show-pods .views-field-title {
+    font-family: 'Maven Pro';
+    font-size: 23px;
+    position: relative;
+    top: -5px;
+    height: 32px;
+    font-size: 17px;
+}
+
+}
+
+@media screen and (max-width: 370px) {
+
+.view-upcoming-live-shows .views-field-field-date-and-time {
+  display: none;
+}
+
+}

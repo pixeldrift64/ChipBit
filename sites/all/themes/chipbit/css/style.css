@@ -1,0 +1,869 @@
+ @import url(https://fonts.googleapis.com/css?family=Maven+Pro);
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+ @font-face {
+	font-family: "fipps-regular";
+	src: url('/sites/all/themes/chipbit/fonts/fipps-regular.ttf') format("truetype");
+}
+
+::selection {
+  background: #2F7AB7; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: #2F7AB7; /* Gecko Browsers */
+  color: #fff;
+}
+
+.logo img {
+  padding: 5px;
+}
+
+#navbar {
+ position: fixed;
+ min-width: 100%;
+ border: 0;
+ border-radius: 0;
+ z-index: 999;
+ background-color: #232323;
+ top: 0;
+ margin-top: 0;
+ }
+
+ body.admin-menu #navbar {
+   top: 28px;
+ }
+
+ body.admin-menu #nowplaying {
+   margin-top: 49px;
+}
+
+a.logo img {
+    height: 50px;
+}
+
+ p {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+}
+
+.navbar-btn {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-nav li {
+  -ms-transform: skew(-30deg);
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30degg);
+  -o-transform: skew(-30deg);
+  transform: skew(-30deg);
+}
+
+.navbar-nav li a {
+  -ms-transform: skew(30deg);
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30degg);
+  -o-transform: skew(30deg);
+  transform: skew(30deg);
+  background: none!important;
+}
+
+.navbar-nav li.active {
+  background-color: #e7e7e7;
+}
+
+.navbar-nav li:hover {
+  background-color: #fff;
+}
+
+#nowplaying {
+  margin-top: 50px;
+  width: 100%;
+  height: 213px;
+  background: url(http://s14.directupload.net/images/111129/44ga9qid.png), url(/sites/default/files/download.png);
+  background-size: auto, 100%;
+  border-bottom: -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat;
+}
+
+.NowPlayingSmall {
+  display: none;
+  z-index: 10;
+}
+
+.PlayButton {
+  position: absolute;
+  width: 50px;
+  margin-top: 57px;
+  margin-left: -108px;
+}
+
+.NowPlayingSmall {
+  display: block;
+width: 1000px;
+height: 75px;
+/* margin: 0 auto; */
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+margin: 0 auto;
+}
+
+.PlayButtonSmall {
+position: fixed;
+width: 25px;
+z-index: 1;
+top: 23px;
+left: 241px;
+}
+
+.NowPlayingCont {
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.NowPlayingCont p {
+  display: inline;
+  margin: 0;
+  margin-left: 5px;
+}
+
+.NowPlayingCont a {
+  text-decoration: none;
+}
+
+.NowPlayingImg {
+  float: left;
+  width: 165px;
+  height: 165px;
+  border: 5px solid white;
+  box-shadow: 0px 0px 36px -5px rgba(255,255,255,1);
+}
+
+.NowPlayingImgSmall {
+  transition: height 0.2s;
+  width: 50px;
+  position: fixed;
+  border: 2.5px solid white;
+  top: 0;
+  left: 213px;
+}
+
+.NowPlayingText {
+  position: relative;
+  top: 25px;
+  left: 5px;
+  color: #ccc;
+  font-family: fipps-regular;
+}
+
+.NowPlayingTitle {
+  position: relative;
+  top: 31px;
+  left: 5px;
+  color: #fff;
+  font-family: fipps-regular;
+}
+
+.NowPlayingTitleSmall {
+position: fixed;
+top: -8px;
+left: 310px;
+color: white;
+font-family: fipps-regular;
+}
+
+.NowPlayingShow {
+  position: relative;
+  top: 53px;
+  left: 5px;
+  color: #ccc;
+  font-family: fipps-regular;
+}
+
+.NowPlayingShowName {
+  position: relative;
+  top: 58px;
+  left: 5px;
+  color: #fff;
+  font-family: fipps-regular;
+}
+
+.main-container {
+  padding-top: 50px;
+}
+
+/**/
+
+.featboxpod {
+  margin-top: 0px;
+  width: 100%;
+  height: 115px;
+  background-color: #232323;
+  margin-bottom: -5px;
+  /* height: auto; */
+  overflow: hidden;
+  /* border-top: 1px solid#000; */
+  padding: 2px 0px;
+  position: relative;
+}
+
+.featboxpod a {
+  text-decoration: none;
+}
+
+.featboxpod p {
+  position: relative;
+  top: -43px;
+  left: -5px;
+  color: #fff;
+  padding-right: 20px;
+  padding-left: 90px;
+  font-size: 13px;
+  width: 280px;
+  line-height: 16px;
+}
+
+.featboxpod h2 {
+position: relative;
+  top: -36px;
+/* left: 0px; */
+color: #fff;
+font-family: Maven Pro;
+font-size: 18px;
+}
+
+.featboxpod .views-field-php-1 {
+  height: 0px;
+}
+
+.featmorepodimage {
+  width: 75px;
+  height: 75px;
+  float: left;
+  position: relative;
+  top: -17px;
+  left: 5px;
+  border: 2.5px solid white;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+.featmorepod {
+  width: 76px;
+  height: 25px;
+  background-color: #018BCD;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: 5px 3px;
+  position: absolute;
+  left: 4px;
+  bottom: 5px;
+  display: inline-block;
+  float: left;
+}
+
+.featmorepod a {
+  top: 2px;
+  display: block;
+  left: 31px;
+  padding: 2px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+
+.featmore p {
+top: -9px;
+left: 31px;
+padding: 0;
+}
+
+
+.podepisode {
+  width: 100%;
+  height: 150px;
+  background-color: #232323;
+  margin-bottom: -14px;
+}
+
+.podimage {
+  width: 125px;
+  float: left;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  border: 2.5px solid white;
+  margin-right: 10px;
+}
+
+.podepisode h2 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-family: Maven Pro;
+}
+
+.poddesc {
+height: 67px;
+margin-top: -6px;
+}
+
+.poddesc p {
+  line-height: 17px;
+}
+
+.epnum {
+  width: 20px;
+  height: 30px;
+  position: relative;
+  top: 58px;
+  left: 5px;
+  color: #fff;
+  font-family: Maven Pro;
+  background-color: #232323;
+  opacity: 0.9;
+  display: inline;
+  z-index: 1;
+  clear: both;
+  overflow: hidden;
+  padding: 2px;
+  z-index: 3;
+}
+
+.podepisode p {
+  position: relative;
+  left: 10px;
+  color: #fff;
+  padding-right: 20px;
+}
+
+.poddownload {
+float: left;
+width: 109px;
+height: 30px;
+background-color: #808080;
+background-repeat: no-repeat;
+background-size: 18px;
+background-position: 6px 4px;
+position: relative;
+left: 29px;
+}
+
+.poddownload:hover {
+  background-color: #cecece;
+}
+
+.podlisten {
+float: left;
+width: 85px;
+height: 30px;
+background-color: #018BCD;
+background-repeat: no-repeat;
+background-size: 22px;
+background-position: 6px 3px;
+position: relative;
+left: 10px;
+}
+
+.podlisten:hover {
+  background-color: #cecece;
+}
+
+.poditunes {
+float: left;
+width: 87px;
+height: 30px;
+background-color: #F83D3A;
+background-repeat: no-repeat;
+background-size: 22px;
+background-position: 6px 4px;
+position: relative;
+left: 20px;
+}
+
+.poditunes:hover {
+  background-color: #cececeg;
+}
+
+.poddownload p {
+  top: -10px;
+  left: 30px;
+  padding: 0;
+}
+
+.podlisten p {
+  top: -10px;
+  left: 35px;
+  padding: 0;
+}
+
+.poditunes p {
+  top: -10px;
+  left: 34px;
+  padding: 0;
+}
+
+
+#cc_recenttracks_chipbit {
+  display: none;
+}
+
+.cctrack {
+  background-color: #232323;
+  color: #fff;
+  font-family: 'Maven Pro', sans-serif;
+  height: 89px;
+  border: 0;
+  padding: 5px;
+  margin-bottom: -7px!important;
+}
+
+.cccover {
+  border: 0!important;
+  padding: 1px!important;
+}
+
+.cctitle {
+  position: relative;
+  left: -3px;
+  top: -4px;
+  color: #337ab7!important;
+  font-size: 15px;
+  font-weight: normal!important;
+  line-height: 17px;
+}
+
+.cctime {
+  display: block!important;
+  position: relative;
+  left: -3px;
+}
+
+.ccalbum {
+  display: none;
+}
+
+.cccover img {
+  border: 0;
+  float: left;
+  width: 75px;
+  height: 75px;
+  margin-right: 0;
+  border: 1px solid #fff;
+}
+
+.ccartist {
+  font-size: 14px;
+  position: relative;
+  left: -3px;
+  top: -8px;
+}
+
+.artist img {
+border-radius: 2px;
+width: 170px;
+height: 170px;
+}
+
+.featbox {
+  margin-top: -10px;
+  width: 100%;
+  min-height: 119px;
+  background-color: #232323;
+  margin-bottom: 10px;
+}
+
+.featimage {
+  width: 75px;
+  height: 75px;
+  float: left;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  border: 2.5px solid white;
+  margin-right: 10px;
+}
+
+.featdesc {
+  height: 26px;
+}
+
+.featbox h2 {
+  position: relative;
+  top: 5px;
+  /* left: 5px; */
+  color: #fff;
+  font-family: Maven Pro;
+  font-size: 18px;
+}
+
+.featbox p {
+  position: relative;
+  top: -8px;
+  left: 0px;
+  color: #fff;
+  padding-right: 10px;
+  padding-left: 89px;
+  font-size: 13px;
+}
+
+.featmore {
+  float: left;
+  width: 79px;
+  height: 25px;
+  background-color: #808080;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 5px 5px;
+  position: relative;
+  left: -84px;
+  top: 27px;
+}
+
+.featmore p {
+  top: -9px;
+  left: 31px;
+  padding: 0;
+}
+
+.artistbox {
+  width: 100%;
+  min-height: 150px;
+  background-color: #232323;
+  margin-bottom: -14px;
+}
+
+.artistimage img {
+  width: 125px;
+  height: 125px;
+  float: left;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  border: 2.5px solid white;
+  margin-right: 10px;
+}
+
+.artistbox h2 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-family: Maven Pro;
+}
+
+.artistdesc {
+  height: 61px;
+}
+
+.artistbox p {
+  position: relative;
+  top: -8px;
+  left: 10px;
+  color: #fff;
+  padding-right: 20px;
+  padding-left: 139px;
+}
+
+.artistbox strong {
+  color: #fff;
+  position: relative;
+  top: -20px;
+  left: 10px;
+}
+
+.artistmore {
+  float: left;
+  width: 115px;
+  height: 30px;
+  background-color: #808080;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 5px 5px;
+  position: relative;
+  left: 10px;
+}
+
+.artistsite {
+  float: left;
+  width: 102px;
+  height: 30px;
+  background-color: #018BCD;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 6px 5px;
+  position: relative;
+  left: 20px;
+}
+
+.artistmore p {
+  top: -10px;
+  left: 31px;
+  padding: 0;
+}
+
+.artistsite p {
+  top: -10px;
+  left: 32px;
+  padding: 0;
+}
+
+.tunebox {
+  width: 100%;
+  height: 91px;
+  background-color: #232323;
+  margin-bottom: 10px;
+}
+
+.featimagetune {
+  width: 81px;
+  height: 81px;
+  float: left;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  border: 2.5px solid white;
+  margin-right: 10px;
+}
+
+.tuneoptions {
+  margin-top: 0px;
+  position: relative;
+  top: 5px;
+}
+
+.tuneoption {
+  float: left;
+  width: 167px;
+  height: 27px;
+  background-color: #808080;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 5px 5px;
+  position: relative;
+  /* margin-top: 5px; */
+  padding: 3px;
+}
+
+
+.tuneoption p a {
+      color: #fff;
+}
+
+.view-show-pods .views-row {
+  background-color: #232323;
+  padding: 5px;
+    height: 106px;
+}
+
+.view-show-pods .views-field-title {
+  font-family: 'Maven Pro';
+  font-size: 23px;
+  position: relative;
+  top: -5px;
+}
+
+.view-show-pods .views-field-field-logo {
+  float: left;
+  margin-right: 5px;
+}
+
+.view-show-pods .views-field-field-logo img {
+  border: 2px solid #fff;
+  width: 90px;
+}
+
+.view-show-pods .poddesc {
+  color: #fff;
+}
+
+.view-show-pods .views-field-field-episode-number div {
+  position: relative;
+  top: -29px;
+  background-color: Red;
+  display: inline-block;
+  padding: 2px;
+  clear: both;
+  min-width: 30px;
+  text-align: center;
+  font-size: 16px;
+  font-family: Maven Pro;
+  background-color: #232323;
+  opacity: 0.9;
+  color: #fff;
+}
+
+.view-show-pods .views-field-title-1 {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.view-show-pods .views-field-field-file {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.view-show-pods .views-field-field-file a {
+  color: #F83D3A;
+}
+
+.view-show-pods .views-field-field-file-1 {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.view-show-pods .views-field-field-itunes-url {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.podButtons {
+  position: relative;
+  top: -49px;
+  left: 97px;
+  width: auto;
+  overflow: hidden;
+  width: 263px;
+}
+
+.node-type-podcast .page-header {
+  display: none;
+}
+
+.node-type-podcast h2.epInfo {
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.jp-playlist {
+  display: none;
+}
+
+div.jp-audio {
+    width: 100%;
+}
+
+.view-upcoming-live-shows .views-row {
+  background-color: #232323;
+  padding: 5px;
+  height: 110px;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+
+.view-upcoming-live-shows .views-row .views-field-field-logo img {
+  float: left;
+  border: 2px solid #fff;
+  margin-right: 5px;
+}
+
+.view-upcoming-live-shows .views-field-title {
+  font-family: maven pro;
+  font-size: 21px;
+  line-height: 18px;
+}
+
+.view-upcoming-live-shows .views-field-body {
+  color: #fff;
+  position: relative;
+  top: 10px;
+}
+
+.view-upcoming-live-shows .views-field-field-date-and-time {
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  bottom: 5px;
+  left: 110px;
+}
+
+.view-artists .views-row {
+  background-color: #232323;
+  padding: 5px;
+  float: left;
+  margin: 5px;
+  width: 200px;
+  height: 220px;
+  position: relative;
+}
+
+.view-artists .views-field-title {
+  position: absolute;
+  bottom: 3px!important;
+  text-align: center;
+  width: 95%;
+  bottom: 0px;
+}
+
+#views-exposed-form-artists-page .views-widget-sort-order {
+  display: none;
+}
+
+.view-id-blog img {
+  float: left;
+  width: 140px;
+  margin: 0px 10px 0px 0px;
+}
+
+.view-id-blog .views-field-title {
+  font-family: 'Maven Pro';
+}
+
+.view-id-blog .views-field-created {
+  font-style: italic;
+}
+
+.view-id-blog .views-field-body {
+  margin-top: 5px;
+}
+
+.view-id-blog .views-row {
+  border-bottom: 1px solid #eee;
+  height: 150px;
+  margin-top: -10px;
+}
+
+.front .page-header {
+  display: none;
+}
+
+.node-type-artist .field-type-image {
+  float: left;
+  margin-right: 10px;
+}
+
+.node-type-artist .field-name-field-website {
+  clear: both;
+}
+
+#block-views-artist-tracks-block {
+  margin-bottom: 35px;
+}
+
+.view-artist-tracks .views-row {
+    background-color: #232323;
+    padding: 5px;
+    height: 35px;
+}
+
+.view-artist-tracks .views-field.views-field-field-image {
+    float: left;
+    margin-right: 5px;
+}
+
+.view-artist-tracks .views-field.views-field-field-image img {
+  height: 25px;
+  width: 25px;
+}
+
+.view-artist-tracks .views-field.views-field-title {
+    color: #fff;
+    font-size: 18px;
+}

@@ -1,0 +1,12 @@
+name = Swift Timezone
+description = Time Zone handling for Swift Pixel sites
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2014-10-18
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "swift_timezone"
+datestamp = "1413658731"
+
+scripts[] = js/timezone.js
+scripts[] = js/handleTimezone.js

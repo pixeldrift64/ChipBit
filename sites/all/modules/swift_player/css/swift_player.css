@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+@font-face {
+ font-family: "fipps-regular";
+ src: url('/sites/all/themes/chipbit/fonts/fipps-regular.ttf') format("truetype");
+}
+
+html {
+  max-width: 500px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'Maven Pro';
+}
+
+#navbar {
+ min-width: 100%;
+ border: 0;
+ border-radius: 0;
+ z-index: 999;
+ background-color: #232323;
+ height: 50px;
+ }
+
+
+ #nowplaying {
+   text-align: center;
+   width: 100%;
+  min-height: 187px;
+   background: url(http://s14.directupload.net/images/111129/44ga9qid.png), url(http://chipbit.net/Images/bg.jpg);
+   background-size: auto, 100%;
+   border-bottom: -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#00abeb), to(#fff), color-stop(0.5, #fff), color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat;
+ }
+
+ .webPlayer {
+   width: 100%;
+ }
+
+ .nowPlayingPlayer {
+   width: 90%;
+  margin: 0px 5%;
+ }
+
+ .NowPlayingCont p {
+     display: block!important;
+     margin: 0px;
+ }
+
+ .NowPlayingCont a {
+   text-decoration: none;
+ }
+
+ .NowPlayingImg {
+   width: 125px;
+   height: 125px;
+   border: 5px solid white;
+   box-shadow: 0px 0px 36px -5px rgba(255,255,255,1);
+ }
+
+ .NowPlayingText {
+   color: #ccc;
+   font-family: fipps-regular;
+   font-size: 10px;
+ }
+
+ .NowPlayingTitle {
+   color: #fff;
+   font-family: fipps-regular;
+   font-size: 10px;
+   display: block!important;
+ }
+
+ .NowPlayingShow {
+   position: relative;
+   top: 53px;
+   left: 5px;
+   color: #ccc;
+   font-family: fipps-regular;
+ }
+
+ .NowPlayingShowName {
+   position: relative;
+   top: 58px;
+   left: 5px;
+   color: #fff;
+   font-family: fipps-regular;
+ }
+
+ .podcastDetails {
+   padding: 10px;
+ }
+
+ .podcastDetails p {
+   margin: 10px 0px;
+ }
+
+ .podcastDetails a {
+   color: #337ab7;
+   text-decoration: none;
+ }

@@ -1,0 +1,8 @@
+name = Timezone Handling
+description = timezone handling module and views to accompany
+core = 7.x
+package = Features
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][file] = file

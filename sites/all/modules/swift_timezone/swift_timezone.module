@@ -1,0 +1,81 @@
+<?php
+
+
+function swift_timezone_preprocess_field(&$variables, $hook) {
+
+  if($variables['element']['#field_type'] == 'datestamp') {
+
+    if(isset($_COOKIE['timezone'])) {
+      $cookieTimezone = $_COOKIE['timezone'];
+    } else {
+      $cookieTimezone = 'Europe/London';
+    }
+
+    $time_stamp = intval($variables['element']['#items'][0]['value']);
+    $return = format_date($time_stamp, 'medium', 'D F jS Y - g:ia', $cookieTimezone);
+
+    $variables['items'][0]['#markup'] = $return;
+
+  }
+
+}
+
+function swift_timezone_views_pre_render(&$view) {
+
+  if($view->name == 'upcoming_live_shows') {
+
+    if(isset($_COOKIE['timezone'])) {
+      $cookieTimezone = $_COOKIE['timezone'];
+    } else {
+      $cookieTimezone = 'Europe/London';
+    }
+
+    foreach($view->result as $result) {
+
+      if(isset($result->field_field_date_and_time['0']['rendered']['#markup'])) {
+
+      $time_stamp = strtotime(strip_tags($result->field_field_date_and_time['0']['rendered']['#markup']));
+      $return = format_date($time_stamp, 'medium', 'D F jS Y - g:ia', $cookieTimezone);
+
+      $result->field_field_date_and_time[0]['rendered']['#markup'] = $return;
+
+    }
+
+    }
+
+  }
+}
+
+function swift_timezone_block_info() {
+  $blocks = array();
+  $blocks['swift_timezone_info'] = array(
+    'info' => t('Timezone Information'),
+  );
+  return $blocks;
+}
+
+function swift_timezone_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'swift_timezone_info':
+      $block['subject'] = '';
+      $block['content'] = swift_timezone_swift_timezone_info();
+      break;
+  }
+  return $block;
+}
+
+function swift_timezone_swift_timezone_info() {
+
+  if(isset($_COOKIE['timezone'])) {
+    $cookieTimezone = $_COOKIE['timezone'];
+  } else {
+    $cookieTimezone = 'Europe/London';
+  }
+
+  $output = t('All times shown for '.$cookieTimezone);
+  return $output;
+}
+
+
+?>
