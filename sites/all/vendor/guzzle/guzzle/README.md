@@ -1,39 +1,61 @@
-Guzzle, PHP HTTP client and webservice framework
-================================================
+Guzzle, PHP HTTP client
+=======================
 
-# This is an old version of Guzzle
+[![Build Status](https://travis-ci.org/guzzle/guzzle.svg?branch=master)](https://travis-ci.org/guzzle/guzzle)
 
-This repository is for Guzzle 3.x. Guzzle 5.x, the new version of Guzzle, has
-been released and is available at
-[https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle). The
-documentation for Guzzle version 5+ can be found at
-[http://guzzlephp.org](http://guzzlephp.org).
+Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and
+trivial to integrate with web services.
 
-Guzzle 3 is only maintained for bug and security fixes. Guzzle 3 will be EOL
-at some point in late 2015.
+- Simple interface for building query strings, POST requests, streaming large
+  uploads, streaming large downloads, using HTTP cookies, uploading JSON data,
+  etc...
+- Can send both synchronous and asynchronous requests using the same interface.
+- Uses PSR-7 interfaces for requests, responses, and streams. This allows you
+  to utilize other PSR-7 compatible libraries with Guzzle.
+- Abstracts away the underlying HTTP transport, allowing you to write
+  environment and transport agnostic code; i.e., no hard dependency on cURL,
+  PHP streams, sockets, or non-blocking event loops.
+- Middleware system allows you to augment and compose client behavior.
 
-### About Guzzle 3
+```php
+$client = new \GuzzleHttp\Client();
+$res = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
+echo $res->getStatusCode();
+// 200
+echo $res->getHeaderLine('content-type');
+// 'application/json; charset=utf8'
+echo $res->getBody();
+// '{"id": 1420053, "name": "guzzle", ...}'
 
-[![Composer Downloads](https://poser.pugx.org/guzzle/guzzle/d/total.png)](https://packagist.org/packages/guzzle/guzzle)
- [![Build Status](https://secure.travis-ci.org/guzzle/guzzle3.png?branch=master)](http://travis-ci.org/guzzle/guzzle3)
+// Send an asynchronous request.
+$request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
+$promise = $client->sendAsync($request)->then(function ($response) {
+    echo 'I completed! ' . $response->getBody();
+});
+$promise->wait();
+```
 
-- Extremely powerful API provides all the power of cURL with a simple interface.
-- Truly take advantage of HTTP/1.1 with persistent connections, connection pooling, and parallel requests.
-- Service description DSL allows you build awesome web service clients faster.
-- Symfony2 event-based plugin system allows you to completely modify the behavior of a request.
+## Help and docs
 
-Get answers with: [Documentation](http://guzzle3.readthedocs.org/en/latest/), [Forums](https://groups.google.com/forum/?hl=en#!forum/guzzle), IRC ([#guzzlephp](irc://irc.freenode.net/#guzzlephp) @ irc.freenode.net)
+- [Documentation](http://guzzlephp.org/)
+- [stackoverflow](http://stackoverflow.com/questions/tagged/guzzle)
+- [Gitter](https://gitter.im/guzzle/guzzle)
 
-### Installing via Composer
 
-The recommended way to install Guzzle is through [Composer](http://getcomposer.org).
+## Installing Guzzle
+
+The recommended way to install Guzzle is through
+[Composer](http://getcomposer.org).
 
 ```bash
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
+```
 
-# Add Guzzle as a dependency
-php composer.phar require guzzle/guzzle:~3.9
+Next, run the Composer command to install the latest stable version of Guzzle:
+
+```bash
+php composer.phar require guzzlehttp/guzzle
 ```
 
 After installing, you need to require Composer's autoloader:
@@ -41,17 +63,27 @@ After installing, you need to require Composer's autoloader:
 ```php
 require 'vendor/autoload.php';
 ```
-## Known Issues
 
-1. Problem following a specific redirect: https://github.com/guzzle/guzzle/issues/385.
-   This has been fixed in Guzzle 4/5.
-2. Root XML attributes not serialized in a service description: https://github.com/guzzle/guzzle3/issues/5.
-   This has been fixed in Guzzle 4/5.
-3. Accept-Encoding not preserved when following redirect: https://github.com/guzzle/guzzle3/issues/9
-   Fixed in Guzzle 4/5.
-4. String "Array" Transmitted w/ PostFiles and Duplicate Aggregator: https://github.com/guzzle/guzzle3/issues/10
-   Fixed in Guzzle 4/5.
-5. Recursive model references with array items: https://github.com/guzzle/guzzle3/issues/13
-   Fixed in Guzzle 4/5
-6. String "Array" Transmitted w/ PostFiles and Duplicate Aggregator: https://github.com/guzzle/guzzle3/issues/10
-   Fixed in Guzzle 4/5.
+You can then later update Guzzle using composer:
+
+ ```bash
+composer.phar update
+ ```
+
+
+## Version Guidance
+
+| Version | Status     | Packagist           | Namespace    | Repo                | Docs                | PSR-7 | PHP Version |
+|---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
+| 3.x     | EOL        | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    | >= 5.3.3    |
+| 4.x     | EOL        | `guzzlehttp/guzzle` | `GuzzleHttp` | [v4][guzzle-4-repo] | N/A                 | No    | >= 5.4      |
+| 5.x     | Maintained | `guzzlehttp/guzzle` | `GuzzleHttp` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    | >= 5.4      |
+| 6.x     | Latest     | `guzzlehttp/guzzle` | `GuzzleHttp` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   | >= 5.5      |
+
+[guzzle-3-repo]: https://github.com/guzzle/guzzle3
+[guzzle-4-repo]: https://github.com/guzzle/guzzle/tree/4.x
+[guzzle-5-repo]: https://github.com/guzzle/guzzle/tree/5.3
+[guzzle-6-repo]: https://github.com/guzzle/guzzle
+[guzzle-3-docs]: http://guzzle3.readthedocs.org/en/latest/
+[guzzle-5-docs]: http://guzzle.readthedocs.org/en/5.3/
+[guzzle-6-docs]: http://guzzle.readthedocs.org/en/latest/
