@@ -1,0 +1,34 @@
+name = ChipBit Alpha
+description = A theme based on 'Alpha' by HTML5Up
+core = 7.x
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/main.css
+stylesheets[all][] = css/font-awesome.min.css
+
+scripts[] = js/jquery.min.js
+scripts[] = js/jquery.dropotron.min.js
+scripts[] = js/jquery.scrollgress.min.js
+scripts[] = js/skel.min.js
+scripts[] = js/util.js
+scripts[] = js/main.js
