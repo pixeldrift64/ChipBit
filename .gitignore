@@ -5,13 +5,10 @@ sites/*/*settings*.php
 files/
 sites/*/files
 sites/*/private
-<<<<<<< HEAD
-=======
 .editorconfig
 Images
 artists
 *.sql
->>>>>>> 8b96dfc9c8b988dcc0a2026e93607b3fadfd7d26
 
 # Ignore default text files
 robots.txt
